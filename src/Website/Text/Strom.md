@@ -1,11 +1,9 @@
 Der korrekte Name für den hier bezeichneten „Strom“ wäre die elektrische Energie (oder auch Strommenge sowie Elektrizitätsmenge, wenn es um die Übertragung ebenjener Energie geht), denn unter elektrischem Strom, kurz Strom genannt, versteht man eigentlich eine physikalische Erscheinung aus der Elektrizitätslehre. Ihre physikalische Größe zur Messung ebenjener ist die Stromstärke und ihre Einheit Ampere (kurz: A). Die zumeist verwendete Maßeinheit für die elektrische Energie hingegen, die wir auf unserer Webseite jedoch (inkorrekter Weise) der Verständlichkeit halber als „Strom“ bezeichnen, ist die Kilowattstunde (kurz: kWh). Dies ist lediglich eine größere Maßeinheit für Joule (kurz: J), wobei eine Kilowattstunde ganze 3.600.000 Joule sind! Das Äquivalenz zu Joule wären die Wattsekunden (kurz: Ws). Zu erwähnen, weswegen wir auf unserer Webseite die Werte lediglich in Kilowattstunden – oder gar größeren Einheiten – angeben, sollte an dieser Stelle selbsterklärend sein.
 
-**Wo brauchen wir jetzt denn aber Strom?**
-
+**Wo brauchen wir jetzt denn aber Strom?**  
 Strom benötigen wir für einige, technische Geräte im Haushalt wie Elektroheizungen, Elektroherde, Fernseher, Geschirrspüler, Waschmaschinen und Vieles mehr. Von Jahr zu Jahr erhöht sich die Anzahl der energiefressenden Geräte und der Stromverbrauch steigt somit immens. Zwar gibt es seit ein paar Jahren diverse Initiativen, die dagegen vorgehen, dennoch gibt es noch viel zu tun!
 
-**Aber was kann ich denn jetzt dagegen tun?**
-
+**Aber was kann ich denn jetzt dagegen tun?**  
 Jede_r Einzelne_r von uns kann seinen Teil dazu beitragen, indem er_sie den Stromverbrauch in seinem_ihrem Alltag reduziert. Hier ein paar Tipps:
 -	Geräte abdrehen, anstatt diese stundenlang im Standby-Modus zu lassen (oft davon betroffen: Wasserkocher, Kaffeemaschinen, Stereoanlagen, Radiowecker, Fernseher, Spielekonsolen, Computer und Waschmaschinen)
 -	Bei ungenutzten Geräten den Stecker ziehen anstatt diese ständig im Stromkreis zu lassen
@@ -22,12 +20,9 @@ Jede_r Einzelne_r von uns kann seinen Teil dazu beitragen, indem er_sie den Stro
      - Die Herdplatte kann bereits einige Minuten vorm Ende der Garzeit abgeschaltet und stattdessen die Restwärme genutzt werden.
 -	Keine nahezu leeren Waschvorgänge – besser ein wenig warten und erst eine gut gefüllte Waschmaschine starten, denn selbst bei der Vorbereitung geht viel Strom verloren
 -	LED- und Energiesparlampen statt Glühbirnen verwenden
--	Energieeffizienzklasse beachten: Jedes stromverbrauchende Gerät ist damit klassifiziert
-     
+-	Energieeffizienzklasse beachten: Jedes stromverbrauchende Gerät ist damit klassifiziert. Je weiter etwas oben steht, desto besser. Es gibt verschiedene Arten der Klassifizierung (z.B. die Erweiterung „A+“, „A++“ und „A+++“), die von Zeit zu Zeit auch angepasst wurden, aber dennoch kann man anhand der Farbe gut erkennen, in welchem Bereich sich ein Gerät befindet.
 ![Bild Effizienzklassen](C:\Users\Katharina\WebstormProjects\LessRessources\src\Website\Bild\Energieeffizenzklassen.png)
 (Path bei Einbindung selbstverständlich ändern!)
-
-Je weiter etwas oben steht, desto besser. Es gibt verschiedene Arten der Klassifizierung (z.B. die Erweiterung „A+“, „A++“ und „A+++“), die von Zeit zu Zeit auch angepasst wurden, aber dennoch kann man anhand der Farbe gut erkennen, in welchem Bereich sich ein Gerät befindet.
 -	Alte Geräte gegen neue, effizientere eintauschen
 -	Generelles Sparen an Geräten: Man sollte sich bereits vor dem Kauf fragen, ob man dieses oder jenes Gerät wirklich benötigt oder ob man sich nicht besser daran täte, es einfach sein zu lassen
 -	Bildschirmgröße: Je größer der Bildschirm, desto besser ist zwar die Grafik, aber desto mehr Strom wird benötigt. Von daher sollte man sich vor dem Kauf gut überlegen, ob es nicht auch ein kleinerer täte.
