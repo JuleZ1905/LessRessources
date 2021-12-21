@@ -63,6 +63,7 @@ nav a:active {
     transition: 0.5s ease;
 }
 .ressourcen div:hover{
+
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
@@ -70,7 +71,7 @@ nav a:active {
 }
 
 .strom{
-    background:url("Ressourcen/aus.jpg");
+    background: 50% 50% no-repeat url("Ressourcen/aus.jpg") ;
     transition: 0.5s ease;
 
 }
@@ -78,7 +79,7 @@ nav a:active {
 .strom:hover{
     -webkit-filter: blur(5px);
     transition: 0.5s ease;
-    background:url("Ressourcen/an.jpg");
+    background: 50% 50% no-repeat url("Ressourcen/an.jpg");
 }
 
 .footer {
