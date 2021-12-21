@@ -6,6 +6,8 @@ body {
 .navbar {
     background-color: #e5e5e5;
     height: 50px;
+    width: 100%;
+
 }
 
 .navbar img {
@@ -54,14 +56,36 @@ nav a:active {
 }
 
 .ressourcen div{
-    border: black;
-    border-style: groove;
+    border: groove black;
     width: 500px;
     height: 500px;
     margin-right: 40px;
+    transition: 0.5s ease;
+}
+.ressourcen div:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 0.5s ease;
 }
 
-footer {
+.strom{
+    background:url("Ressourcen/aus.jpg");
+    transition: 0.5s ease;
+
+}
+
+.strom:hover{
+    -webkit-filter: blur(5px);
+    transition: 0.5s ease;
+    background:url("Ressourcen/an.jpg");
+}
+
+.footer {
+    position: absolute;
+    width:100%;
+    bottom: 0;
+    align-items: flex-end;
     padding: 10px 20px;
     background: #666;
     color: white;
