@@ -23,3 +23,6 @@ Jede_r Einzelne_r von uns kann seinen Teil dazu beitragen, indem er_sie den Stro
 -	Keine nahezu leeren Waschvorgänge – besser ein wenig warten und erst eine gut gefüllte Waschmaschine starten, denn selbst bei der Vorbereitung geht viel Strom verloren
 -	LED- und Energiesparlampen statt Glühbirnen verwenden
 -	Energieeffizienzklasse beachten: Jedes stromverbrauchende Gerät ist damit klassifiziert
+     
+![Bild Effizienzklassen](C:\Users\Katharina\WebstormProjects\LessRessources\src\Website\Bild\Energieeffizenzklassen.png)
+(Path bei Einbindung selbstverständlich ändern!)
