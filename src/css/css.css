@@ -71,7 +71,7 @@ nav a:active {
 }
 
 .strom{
-    background: 50% 50% no-repeat url("Ressourcen/aus.jpg") ;
+    background: 50% 50% no-repeat url("../lib/aus.jpg") ;
     transition: 0.5s ease;
 
 }
@@ -79,7 +79,7 @@ nav a:active {
 .strom:hover{
     -webkit-filter: blur(5px);
     transition: 0.5s ease;
-    background: 50% 50% no-repeat url("Ressourcen/an.jpg");
+    background: 50% 50% no-repeat url("../lib/an.jpg");
 }
 
 .footer {
@@ -90,6 +90,23 @@ nav a:active {
     padding: 10px 20px;
     background: #666;
     color: white;
+}
+
+.strom .strom{
+    background-color: #666666;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+    opacity: 0;
+    width: 360px;
+    height: 100px;
+    padding: 130px 20px;
 }
 
 @media screen and (max-width: 700px) {
