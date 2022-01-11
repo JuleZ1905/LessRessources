@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -46,42 +47,6 @@ nav a:active {
     font-weight: bold;
 }
 
-.ressourcen{
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-}
-
-.ressourcen div{
-    border: groove black;
-    width: 500px;
-    height: 500px;
-    margin-right: 40px;
-    transition: 0.5s ease;
-}
-.ressourcen div:hover{
-
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-    transition: 0.5s ease;
-}
-
-.strom{
-    background: 50% 50% no-repeat url("../lib/aus.jpg") ;
-    transition: 0.5s ease;
-
-}
-
-.strom:hover{
-    -webkit-filter: blur(5px);
-    transition: 0.5s ease;
-    background: 50% 50% no-repeat url("../lib/an.jpg");
-}
-
 .footer {
     position: absolute;
     width:100%;
@@ -91,22 +56,115 @@ nav a:active {
     background: #666;
     color: white;
 }
+/*---------------------------------------------------*/
+.ressourcen{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
-.strom .strom{
-    background-color: #666666;
+.ressourcen div{
+    width: 500px;
+    height: 500px;
+    margin-right: 40px;
+}
+
+/**
+Strombild beim drüer hovern verblassen
+ */
+.strombild{
+    background: 50% 50% no-repeat url("../lib/aus.jpg") ;
+    transition: 0.5s ease;
+}
+
+.strombild:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 0.5s ease;
+    -webkit-filter: blur(5px);
+    background: 50% 50% no-repeat url("../lib/an.jpg");
+}
+
+.strom{
+    border:solid  black;
+    transition: 0.5s ease;
+    position: relative;
+}
+
+.stromtext, .strombild{
+    width: 500px;
+    height: 500px;
     position: absolute;
-    top: 0;
-    left: 0;
-    color: #fff;
+}
+
+.stromtext {
+    opacity:0;
+    text-align: center;
+    align-items: center;
+    z-index: 1;
+    bottom: 0px;
+    background: hsla(0,0%,0%,0.5);
+    transition: opacity 1s;
+    width: 100%;
+    text-align: center;
+}
+
+
+.strombild{
+    z-index: 2;
+}
+
+.strom:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 0.5s ease;
+}
+
+.stromtext :hover {
+    opacity: 1;
+    background: #0b3848;
+    color: blue;
+}
+
+
+/* --------------------------------------------------------------*/
+
+
+.example {
+    cursor: pointer;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+    text-align:center;
+}
+
+
+.example .text {
     -webkit-transition: all 300ms ease-out;
     -moz-transition: all 300ms ease-out;
     -o-transition: all 300ms ease-out;
     -ms-transition: all 300ms ease-out;
     transition: all 300ms ease-out;
+    transform: translateY(30px);
+    -webkit-transform: translateY(30px);
+}
+.example .title {
+    font-size: 2.5em;
+    text-transform: uppercase;
     opacity: 0;
-    width: 360px;
-    height: 100px;
-    padding: 130px 20px;
+    transition-delay: 0.2s;
+    transition-duration: 0.3s;
+}
+.example:hover .title,
+.example:focus .title {
+    opacity: 1;
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
 }
 
 @media screen and (max-width: 700px) {
