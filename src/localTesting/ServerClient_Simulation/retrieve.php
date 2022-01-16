@@ -21,7 +21,7 @@ $json = file_get_contents("http://192.168.8.108/status");
 $obj = json_decode($json);
 $result = $obj->meters[0]->power;
 
-$url = "http://localhost/LessRess_Testing/ServerClient_Simulation/store.php?shelly=$result&cert=1234";
+$url = "http://localhost/LessRessources_Website/src/localTesting/ServerClient_Simulation/store.php?shelly=$result&cert=1234";
 
 $curl = curl_init($url);
 $resp = curl_exec($curl);
