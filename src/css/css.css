@@ -7,10 +7,12 @@ body {
     padding: 0;
     overflow-x: hidden;
 
-    background-image: url('../lib/environment.jpg');
+  
+    background-image: url('../Website/Bild/ivan-dostal-9QKbmJv9oMM-unsplash.jpg');
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    
 }
 
 .aaa{
@@ -24,7 +26,9 @@ body {
 }
 
 .navbar {
-    background-color: #2f2e2e;
+    background-color: #3a3636a6;
+    position: fixed;
+    top: 0%;
     height: 50px;
     width: 100%;
 
