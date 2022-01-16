@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.chart{
+    position: relative;
+    width: 50vw;
+    height: 50vh;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.chart {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.fakten {
+    grid-column: 4;
+    grid-row: 1 / 4;
+    border: #353535 solid;
+}
