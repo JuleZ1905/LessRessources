@@ -17,7 +17,7 @@ if (isset($POST['username'])) {
     <button class="btn-login" onclick="openForm()">Login</button>
 
     <div class="container form-popup" id="myForm">
-        <img src="../../lib/logo.jpg"/>
+        <img src="../Bild/neu Logo.png"/>
         <form method="post" action="#">
             <div class="form-input">
                 <input type="text" name="text" placeholder="Enter your username"/>
