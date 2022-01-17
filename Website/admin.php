@@ -6,30 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eingabemaske</title>
-    <style>
-        * {
-            margin: 15px;
-        }
-
-        table {
-            border-spacing: 0;
-        }
-
-        th,
-        td {
-            border: 0.5px solid black;
-            padding: 15px;
-        }
-
-        .btn {
-            width: 100px;
-        }
-
-        .forms {
-            float: left;
-            margin-right: 10%;
-        }
-    </style>
+    <link rel="stylesheet" href="lib/css/admin.css">
     <script src="JavaScript/script.js" defer></script>
 </head>
 
@@ -161,7 +138,7 @@
             <?php endwhile; ?>
         </tbody>
     </table>
-    <button id="clearBTN">Clear</button>
+    <!--<button id="clearBTN">Clear</button>-->
 </body>
 
 </html>

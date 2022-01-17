@@ -8,8 +8,6 @@ body {
     overflow-x: hidden;
 }
 
-
-
 .less {
     top: 150px;
     right: 300px;
@@ -34,14 +32,13 @@ body {
     z-index: 1;
 }
 
-.text{
+.text {
     margin-top: 50px;
     font-size: 1.8em;
     margin-right: 20%;
     margin-left: 20%;
     line-height: 1.5;
 }
-
 
 .navbar {
     background-color: rgba(157, 182, 183, 0.51);
@@ -50,7 +47,6 @@ body {
     height: 50px;
     width: 100%;
     z-index: 2;
-
 }
 
 .navbar img {
@@ -90,7 +86,6 @@ nav a:active {
 }
 
 .footer {
-
     width: 100%;
     bottom: 0;
     align-items: flex-end;
@@ -99,18 +94,14 @@ nav a:active {
     color: white;
 }
 
-
 @media screen and (max-width: 700px) {
     nav {
         width: 100%;
         margin-top: -5px;
     }
-
     nav li {
         display: block;
         background-color: #e5e5e5;
         text-align: center;
     }
 }
-
-
