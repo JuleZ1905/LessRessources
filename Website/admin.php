@@ -1,3 +1,10 @@
+<?php
+session_start();
+$isLoggedIn = false;
+if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
+    $isLoggedIn = true;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +18,23 @@
 </head>
 
 <body>
+<div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="aboutUs.php">Über uns</a></li>
+                <li><a href="strom.php">Strom</a></li>
+                <?php
+                if ($isLoggedIn) {
+                    echo '<li><a href="admin.php">Admin</a></li>';
+                } else {
+                    echo '<li><a href="login.php">Login</a></li>';
+                }
+                ?>
+            </ul>
+        </nav>
+    </div>
+
     <h1>Eingabemaske</h1>
     <form class="forms" action="" method="POST">
         <label for="ress">Ressource: </label>
