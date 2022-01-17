@@ -1,3 +1,12 @@
+<?php
+session_start();
+$isLoggedIn = false;
+if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
+    $isLoggedIn = true;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,10 +20,16 @@
     <div class="navbar">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="aboutUs.html">Über uns</a></li>
-                <li><a href="strom.html">Strom</a></li>
-                <li><a href="login.php">Login</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="aboutUs.php">Über uns</a></li>
+                <li><a href="strom.php">Strom</a></li>
+                <?php
+                if ($isLoggedIn) {
+                    echo '<li><a href="admin.php">Admin</a></li>';
+                } else {
+                    echo '<li><a href="login.php">Login</a></li>';
+                }
+                ?>
             </ul>
         </nav>
     </div>
@@ -24,9 +39,6 @@
         <img src="lib/pictures/neu Logo.png" width="200px">
     </div>
 
-    <div class="aaa">
-        AAAAAAAAAAAa
-    </div>
 
     <!--
 <figure class="snip1477">
