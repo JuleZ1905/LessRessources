@@ -7,21 +7,25 @@ body {
     padding: 0;
     overflow-x: hidden;
 
-  
+
     background-image: url('../Website/Bild/ivan-dostal-9QKbmJv9oMM-unsplash.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    
+
 }
 
-.aaa{
-    background: white;
-    height: 700px;
-    width:700px;
+.aaa {
+    background: rgba(255, 255, 255, 0.49);
+    border-style: ridge;
+    height: 500px;
+    width: 500px;
+
+    margin-right: 200px;
     margin-left: auto;
-    margin-right: 100px;
+
     margin-top: 100px;
+
 
 }
 
@@ -72,7 +76,7 @@ nav a:active {
 
 .footer {
     position: absolute;
-    width:100%;
+    width: 100%;
     bottom: 0;
     align-items: flex-end;
     padding: 10px 20px;
@@ -95,7 +99,6 @@ nav a:active {
 }
 
 
-
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 figure.snip1477 {
@@ -111,6 +114,7 @@ figure.snip1477 {
     font-size: 16px;
     background-color: #000000;
 }
+
 figure.snip1477 *,
 figure.snip1477 *:before,
 figure.snip1477 *:after {
@@ -119,18 +123,21 @@ figure.snip1477 *:after {
     -webkit-transition: all 0.55s ease;
     transition: all 0.55s ease;
 }
+
 figure.snip1477 img {
     max-width: 100%;
     backface-visibility: hidden;
     vertical-align: top;
     opacity: 0.9;
 }
+
 figure.snip1477 .title {
     position: absolute;
     top: 58%;
     left: 25px;
     padding: 5px 10px 10px;
 }
+
 figure.snip1477 .title:before,
 figure.snip1477 .title:after {
     height: 2px;
@@ -139,18 +146,21 @@ figure.snip1477 .title:after {
     content: '';
     background-color: #ffffff;
 }
+
 figure.snip1477 .title:before {
     top: 0;
     left: 10px;
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
 }
+
 figure.snip1477 .title:after {
     bottom: 0;
     right: 10px;
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
 }
+
 figure.snip1477 .title div:before,
 figure.snip1477 .title div:after {
     width: 2px;
@@ -159,26 +169,31 @@ figure.snip1477 .title div:after {
     content: '';
     background-color: #ffffff;
 }
+
 figure.snip1477 .title div:before {
     top: 10px;
     right: 0;
     -webkit-transform: translateY(100%);
     transform: translateY(100%);
 }
+
 figure.snip1477 .title div:after {
     bottom: 10px;
     left: 0;
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
 }
+
 figure.snip1477 h2,
 figure.snip1477 h4 {
     margin: 0;
     text-transform: uppercase;
 }
+
 figure.snip1477 h2 {
     font-weight: 400;
 }
+
 figure.snip1477 h4 {
     display: block;
     font-weight: 700;
@@ -186,6 +201,7 @@ figure.snip1477 h4 {
     padding: 5px 10px;
     color: #000000;
 }
+
 figure.snip1477 figcaption {
     position: absolute;
     bottom: 42%;
@@ -197,9 +213,11 @@ figure.snip1477 figcaption {
     font-weight: 500;
     letter-spacing: 1.5px;
 }
+
 figure.snip1477 figcaption p {
     margin: 0;
 }
+
 figure.snip1477 a {
     position: absolute;
     top: 0;
@@ -207,6 +225,7 @@ figure.snip1477 a {
     left: 0;
     right: 0;
 }
+
 figure.snip1477:hover img,
 figure.snip1477.hover img {
     zoom: 1;
@@ -214,6 +233,7 @@ figure.snip1477.hover img {
     -webkit-opacity: 0.35;
     opacity: 0.35;
 }
+
 figure.snip1477:hover .title:before,
 figure.snip1477.hover .title:before,
 figure.snip1477:hover .title:after,
@@ -225,6 +245,7 @@ figure.snip1477.hover .title div:after {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
 }
+
 figure.snip1477:hover .title:before,
 figure.snip1477.hover .title:before,
 figure.snip1477:hover .title:after,
@@ -232,6 +253,7 @@ figure.snip1477.hover .title:after {
     -webkit-transition-delay: 0.15s;
     transition-delay: 0.15s;
 }
+
 figure.snip1477:hover figcaption,
 figure.snip1477.hover figcaption {
     opacity: 1;
