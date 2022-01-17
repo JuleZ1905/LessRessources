@@ -87,7 +87,14 @@ nav a:active {
     }
 }
 
+.bilder{
 
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  position: center;
+}
 
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 .snip1566 {
@@ -97,7 +104,7 @@ nav a:active {
     max-width: 190px;
     width: 100%;
     color: #bbb;
-    top:100px;
+
     font-size: 16px;
     box-shadow: none !important;
     -webkit-transform: translateZ(0);

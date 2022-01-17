@@ -33,7 +33,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
             </ul>
         </nav>
     </div>
-    <div calss = "bilder">
+    <div class = "bilder">
         <figure class="snip1566">
           <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample14.jpg" alt="sq-sample14" />
           <figcaption><p>Zangl</p></figcaption>
