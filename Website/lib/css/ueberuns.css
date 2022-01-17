@@ -1,0 +1,197 @@
+* {
+    font-family: Montserrat, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.text{
+    margin-top: 100px;
+    font-size: 1.8em;
+    margin-right: 20%;
+    margin-left: 20%;
+    line-height: 1.5;
+}
+
+
+.navbar {
+    background-color: rgba(157, 182, 183, 0.51);
+    position: fixed;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    z-index: 2;
+
+}
+
+.navbar img {
+    width: 150px;
+    padding: 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    float: right;
+    margin: 0;
+}
+
+li {
+    display: inline;
+    padding: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2f2d2d;
+    display: inline-block;
+    padding-top: 15px;
+}
+
+nav a:hover {
+    color: #00b2b2;
+}
+
+nav a:active {
+    font-weight: bold;
+}
+
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    align-items: flex-end;
+    padding: 10px 20px;
+    background: #666;
+    color: white;
+}
+
+
+@media screen and (max-width: 700px) {
+    nav {
+        width: 100%;
+        margin-top: -5px;
+    }
+
+    nav li {
+        display: block;
+        background-color: #e5e5e5;
+        text-align: center;
+    }
+}
+
+
+
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+.snip1566 {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    max-width: 190px;
+    width: 100%;
+    color: #bbb;
+    top:100px;
+    font-size: 16px;
+    box-shadow: none !important;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.snip1566 *,
+.snip1566:before,
+.snip1566:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+.snip1566:before,
+.snip1566:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: -1;
+    border: 2px solid #bbb;
+    border-color: transparent #bbb;
+}
+
+.snip1566 img {
+    max-width: 100%;
+    backface-visibility: hidden;
+    vertical-align: top;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.snip1566 figcaption {
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 50%;
+}
+
+.snip1566 p {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 1.8em;
+    z-index: 1;
+}
+
+.snip1566 a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.snip1566:hover figcaption,
+.snip1566.hover figcaption {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.snip1566:hover:before,
+.snip1566.hover:before,
+.snip1566:hover:after,
+.snip1566.hover:after {
+    border-width: 10px;
+}
+
+.snip1566:hover:before,
+.snip1566.hover:before {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.snip1566:hover:after,
+.snip1566.hover:after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+
+
