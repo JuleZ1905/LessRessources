@@ -1,3 +1,31 @@
+<?php
+    session_start();
+    require_once 'lib/DB_connection/DB.php';
+
+    if (isset($_POST['LOGIN'])) {
+        $sql = "SELECT password FROM Admin;";
+        $stmt = $db->query($sql);
+        $stmt2 = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $sql2 = "SELECT username FROM Admin;";
+        $stmt3 = $db->query($sql2);
+        $stmt4 = $stmt3->fetch(PDO::FETCH_ASSOC);
+
+        $db_username = array_values($stmt4)[0];
+        $passwd_hash = array_values($stmt2)[0];
+
+        $password = $_POST['password'];
+        $username = $_POST['name'];
+
+        if (password_verify($password, $passwd_hash) && $db_username == $username) {
+            $_SESSION['isLoggedIn'] = true;
+        } else {
+            echo 'Falscher username oder falsches Passwort';
+        }
+    }
+
+    ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +40,7 @@
 
     <div class="container form-popup" id="myForm">
         <img src="lib/pictures/neu Logo.png" />
-        <form method="POST">
+        <form method="POST" action="">
             <div class="form-input">
                 <input type="text" name="name" placeholder="Enter your username" />
             </div>
@@ -22,15 +50,6 @@
             <input type="submit" name="LOGIN" class="btn-login" />
         </form>
     </div>
-
-    <?php
-
-    if (isset($_POST['LOGIN'])) {
-        echo $_POST['name'] . "<br>";
-        echo $_POST['password'];
-    }
-
-    ?>
 
 
 </body>
