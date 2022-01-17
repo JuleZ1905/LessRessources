@@ -16,7 +16,27 @@
 
 <?php
 
-if (isset($_GET['cert']) && $_GET['cert'] == '1234' && isset($_GET['shelly'])){
+require_once("../../Website/DB_Connection/dbContent/DB.php");
+
+
+
+if (isset($_GET['cert']) && $_GET['cert'] == '1234' && isset($_GET['shelly'])) {
     $shelly = $_GET['shelly'];
-    echo $shelly;
+    $result = round($shelly, 0, PHP_ROUND_HALF_UP);
+    
+    $sql = "INSERT INTO Ressource (Bezeichnung, Menge, Einheit, von, bis)
+    VALUE (:newResource, :menge, :einheit, :von, :bis);";
+
+    $statement = $db->prepare($sql);
+    
+    $statement->execute([
+        ':newResource' => "Strom",
+        ':menge' => $result,
+        ':einheit' => "kWh",
+        ':von' => date("y-m-d"),
+        ':bis' => date("y-m-d")
+    ]);
+    
+    echo date("Y-m-d");
+    echo $result;
 }

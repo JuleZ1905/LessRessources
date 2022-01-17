@@ -117,7 +117,7 @@
         }
 
         if ($dateOK && $valuesOK) {
-            $newResource . " " . $menge . " " . $einheit . " " . $von . " " . $bis . "";
+            
             $sql = "INSERT INTO Ressource (Bezeichnung, Menge, Einheit, von, bis)
             VALUE (:newResource, :menge, :einheit, :von, :bis);";
 
