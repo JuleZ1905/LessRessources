@@ -30,7 +30,7 @@
     
     $headers = array(
     
-      //'Accept: application/json, text/javascript, */*; q=0.01',
+      'Accept: application/json, text/javascript, */*; q=0.01',
     
       'X-Requested-With: XMLHttpRequest',
       'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8',
