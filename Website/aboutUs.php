@@ -13,7 +13,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 <head>
     <meta charset="UTF-8">
     <title>LessRessources</title>
-    <link href="lib/css/css.css" rel="stylesheet">
+    <link href="lib/css/ueberuns.css" rel="stylesheet">
 </head>
 
 <body>
@@ -33,12 +33,31 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
             </ul>
         </nav>
     </div>
-
-    <div class="ressourcen">
+    <div calss = "bilder">
+        <figure class="snip1566">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample14.jpg" alt="sq-sample14" />
+          <figcaption><p>Zangl</p></figcaption>
+          <a href="#"></a>
+        </figure>
+        <figure class="snip1566"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample17.jpg" alt="sq-sample17" />
+          <figcaption><p>Jaros</p></figcaption>
+          <a href="#"></a>
+        </figure>
+        <figure class="snip1566"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample19.jpg" alt="sq-sample19" />
+          <figcaption><p>Brunner</p></figcaption>
+          <a href="#"></a>
+        </figure>
+        <figure class="snip1566"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample20.jpg" alt="sq-sample20" />
+          <figcaption><p>Klenner</p></figcaption>
+          <a href="#"></a>
+        </figure>
+    </div>
+    <div class="text">
         Wir, LessRessources, sind ein vierköpfiges Team, das sich im Rahmen eines informationstechnischen Projektes zusammengefunden hat. Unser Projektleiter ist Julian Zangl, die stellvertretende Projektleiterin Katharina Jaros und unsere weiteren beiden Mitglieder
         heißen Katharina Klenner und Hannah Brunner. Gemeinsam besuchen wir bereits die vierte Klasse der HTL Rennweg mit Schwerpunkt Medientechnik. Über unsere Schulwahl sind wir allesamt glücklich, was wir auch in diesem Projekt, welches sich primär
         mit dem Erfassen von Daten befasst, widerspiegeln wollen. Aus Zeitgründen ist die Quantität unseres Projektes durchaus eingeschränkt, doch wir planen, es auch noch nach Projektabnahme weiterzuführen, um Großartiges zu erreichen!
     </div>
+
 
     <div class="footer">
         <p>Hallo Leuteee</p>
