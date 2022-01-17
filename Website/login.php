@@ -19,6 +19,7 @@
 
         if (password_verify($password, $passwd_hash) && $db_username == $username) {
             $_SESSION['isLoggedIn'] = true;
+            header('Location: index.php');
         } else {
             echo 'Falscher username oder falsches Passwort';
         }
