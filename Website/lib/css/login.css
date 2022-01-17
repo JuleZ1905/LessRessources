@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0 auto;
     background-image: url("../lib/.jpg");
     background-repeat: no-repeat;
@@ -7,22 +7,23 @@ body{
     height: 100vh;
 }
 
-.container{
+.container {
     width: 500px;
     height: 450px;
     text-align: center;
     margin: 0 auto;
-    background-color: rgba(44, 62, 80,0.7);
+    background-color: rgba(44, 62, 80, 0.7);
     margin-top: 160px;
 }
 
-.container img{
-    width: 150px;
+.container img {
+    width: 200px;
     height: 150px;
     margin-top: -60px;
 }
 
-input[type="text"],input[type="password"]{
+input[type="text"],
+input[type="password"] {
     margin-top: 30px;
     height: 45px;
     width: 300px;
@@ -32,7 +33,7 @@ input[type="text"],input[type="password"]{
     padding-left: 40px;
 }
 
-.form-input::before{
+.form-input::before {
     content: "\f007";
     font-family: "FontAwesome";
     padding-left: 07px;
@@ -42,11 +43,11 @@ input[type="text"],input[type="password"]{
     color: #2980b9;
 }
 
-.form-input:nth-child(2)::before{
+.form-input:nth-child(2)::before {
     content: "\f023";
 }
 
-.btn-login{
+.btn-login {
     padding: 15px 25px;
     border: none;
     background-color: #27ae60;
@@ -55,12 +56,8 @@ input[type="text"],input[type="password"]{
     margin-top: 20px;
 }
 
-form{
+form {
     margin-top: 20px;
-}
-
-img{
-    border-radius: 50%;
 }
 
 .form-popup {
