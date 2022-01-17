@@ -1,3 +1,12 @@
+<?php
+session_start();
+$isLoggedIn = false;
+if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
+    $isLoggedIn = true;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,11 +14,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="lib/css/admin.css" rel="stylesheet">
     <title>Eingabemaske</title>
     <style>
-        * {
-            margin: 15px;
-        }
+
 
         table {
             border-spacing: 0;
@@ -34,6 +42,24 @@
 </head>
 
 <body>
+
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="aboutUs.php">Über uns</a></li>
+                <li><a href="strom.php">Strom</a></li>
+                <?php
+                if ($isLoggedIn) {
+                    echo '<li><a href="admin.php">Admin</a></li>';
+                } else {
+                    echo '<li><a href="login.php">Login</a></li>';
+                }
+                ?>
+            </ul>
+        </nav>
+    </div>
+
     <h1>Eingabemaske</h1>
     <form class="forms" action="" method="POST">
         <label for="ress">Ressource: </label>

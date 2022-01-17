@@ -32,6 +32,10 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
                 ?>
             </ul>
         </nav>
+
+<div class = "Uebeerschrift">
+        <p> Über uns </p>
+</div>
     </div>
     <div class = "bilder">
         <figure class="snip1566">
