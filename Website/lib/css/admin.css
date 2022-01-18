@@ -2,22 +2,39 @@
     font-family: Montserrat, sans-serif;
 }
 
-
 .navbar {
     background-color: rgba(157, 182, 183, 0.51);
     position: fixed;
     top: 0%;
     height: 50px;
     width: 100%;
-
 }
 
-label{
+table {
+    border-spacing: 0;
+}
+
+th,
+td {
+    border: 0.5px solid black;
+    padding: 15px;
+}
+
+.btn {
+    width: 100px;
+}
+
+.forms {
+    float: left;
+    margin-right: 10%;
+}
+
+label {
     margin-left: 50px;
     margin-right: 50px;
 }
 
-.Uebeerschrift{
+.Uebeerschrift {
     margin-top: 140px;
     margin-right: auto;
     margin-left: auto;
@@ -34,7 +51,6 @@ label{
     z-index: 2;
     line-height: 50px;
     text-align: center;
-
 }
 
 .navbar img {
@@ -59,7 +75,6 @@ nav li {
 }
 
 nav a {
-
     text-decoration: none;
     color: #2f2d2d;
     display: inline-block;
@@ -78,33 +93,33 @@ nav a:active {
 }
 
 form ul {
-    width:750px;
-    list-style-type:none;
-    list-style-position:outside;
-    margin:0px;
-    padding:0px;
+    width: 750px;
+    list-style-type: none;
+    list-style-position: outside;
+    margin: 0px;
+    padding: 0px;
 }
 
-form li{
-    padding:12px;
-    border-bottom:1px solid #eee;
-    position:relative;
+form li {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    position: relative;
 }
 
-form label{
-    width:150px;
+form label {
+    width: 150px;
     margin-top: 3px;
-    display:inline-block;
-    float:left;
-    padding:3px;
+    display: inline-block;
+    float: left;
+    padding: 3px;
 }
 
-form input{
-    height:20px;
-    width:220px;
-    padding:5px 8px;
+form input {
+    height: 20px;
+    width: 220px;
+    padding: 5px 8px;
 }
 
-form button{
-    margin-left:156px;
+form button {
+    margin-left: 156px;
 }
