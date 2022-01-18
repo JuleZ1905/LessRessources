@@ -32,6 +32,10 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
                 ?>
             </ul>
         </nav>
+
+<div class = "Uebeerschrift">
+        <p> Über uns </p>
+</div>
     </div>
     <div class = "bilder">
         <figure class="snip1566">
@@ -54,8 +58,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
     </div>
     <div class="text">
         Wir, LessRessources, sind ein vierköpfiges Team, das sich im Rahmen eines informationstechnischen Projektes zusammengefunden hat. Unser Projektleiter ist Julian Zangl, die stellvertretende Projektleiterin Katharina Jaros und unsere weiteren beiden Mitglieder
-        heißen Katharina Klenner und Hannah Brunner. Gemeinsam besuchen wir bereits die vierte Klasse der HTL Rennweg mit Schwerpunkt Medientechnik. Über unsere Schulwahl sind wir allesamt glücklich, was wir auch in diesem Projekt, welches sich primär
-        mit dem Erfassen von Daten befasst, widerspiegeln wollen. Aus Zeitgründen ist die Quantität unseres Projektes durchaus eingeschränkt, doch wir planen, es auch noch nach Projektabnahme weiterzuführen, um Großartiges zu erreichen!
+        heißen Katharina Klenner und Hannah Brunner.
     </div>
 
 

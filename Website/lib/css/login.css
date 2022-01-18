@@ -68,3 +68,57 @@ form {
     z-index: 9;
     text-align: center;
 }
+
+
+
+.navbar {
+    background-color: rgba(157, 182, 183, 0.51);
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    z-index: 2;
+    line-height: 50px;
+    text-align: center;
+
+}
+
+.navbar img {
+    width: 150px;
+    padding: 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    float: right;
+    margin: 0;
+}
+
+li {
+    display: inline;
+    padding: 15px;
+}
+
+nav a {
+
+    text-decoration: none;
+    color: #2f2d2d;
+    display: inline-block;
+    padding-top: 15px;
+    font-size: 1.5em;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+nav a:hover {
+    color: #00b2b2;
+}
+
+nav a:active {
+    font-weight: bold;
+}
