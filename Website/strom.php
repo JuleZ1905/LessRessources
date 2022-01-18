@@ -36,7 +36,13 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
         </nav>
     </div>
 
+
     <div class="grid">
+
+
+<div class = "Uebeerschrift">
+        <p> Strom </p>
+</div>
         <div class="chart">
             <canvas id="myChart"></canvas>
         </div>
