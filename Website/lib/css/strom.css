@@ -20,22 +20,29 @@ body {
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
 }
+.Uebeerschrift{
+    grid-column: 2;
+    grid-row: 1;
 
+    margin-right: auto;
+    margin-left: auto;
+    width: fit-content;
+    font-size: 80px;
+}
 .chart {
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 2 ;
 }
 
 .fakten {
-    grid-column: 4;
-    grid-row: 1 / 4;
+
     border: #353535 solid;
 }
 
 .navbar {
     background-color: rgba(157, 182, 183, 0.51);
     position: fixed;
-    top: 0%;
+    top: 0;
     height: 50px;
     width: 100%;
 
