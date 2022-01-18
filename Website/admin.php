@@ -60,40 +60,53 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
         </nav>
     </div>
 
-    <h1>Eingabemaske</h1>
+
+
+    <div class = "Uebeerschrift">
+            <p>Eingabemaske</p>
+    </div>
+
+
     <form class="forms" action="" method="POST">
+    <ul>
+<li>
         <label for="ress">Ressource: </label>
         <select name="ress" id="ress" required>
             <option value="" disabled selected>--Input--</option>
             <option value="Strom">Strom</option>
             <option value="Wasser">Wasser</option>
         </select>
+</li>
 
-        <br>
 
+<li>
         <label for="menge">Menge: </label>
         <input type="number" id="menge" name="menge" required>
+</li>
 
-        <br>
-
+<li>
         <label for="einheit">Einheit: </label>
         <select name="Einheit" id="einheit" required>
             <option value="" disabled selected>--Input--</option>
             <option value="kWh">kW/h</option>
             <option value="Liter">Liter</option>
         </select>
+</li>
 
-        <br>
-
+<li>
         <label for="von">Von: </label>
         <input type="date" id="von" name="von" value="" min="2019-01-01" max="<?php echo date("Y-m-d"); ?>" required>
+</li>
 
-        <br>
-
+<li>
         <label for="von">Bis: </label>
         <input type="date" id="bis" name="bis" value="" min="2019-01-01" max="<?php echo date("Y-m-d"); ?>" required>
         <br>
+        </li>
+        <li>
         <input class="btn" type="submit" value="Submit" name="submitBtn">
+</li>
+</ul>
     </form>
 
     <?php

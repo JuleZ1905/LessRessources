@@ -2,35 +2,6 @@
     font-family: Montserrat, sans-serif;
 }
 
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-.chart{
-    position: relative;
-    width: 50vw;
-    height: 50vh;
-}
-
-.grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
-}
-
-.chart {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.fakten {
-    grid-column: 4;
-    grid-row: 1 / 4;
-    border: #353535 solid;
-}
 
 .navbar {
     background-color: rgba(157, 182, 183, 0.51);
@@ -41,7 +12,18 @@ body {
 
 }
 
+label{
+    margin-left: 50px;
+    margin-right: 50px;
+}
 
+.Uebeerschrift{
+    margin-top: 140px;
+    margin-right: auto;
+    margin-left: auto;
+    width: fit-content;
+    font-size: 80px;
+}
 
 .navbar {
     background-color: rgba(157, 182, 183, 0.51);
@@ -71,7 +53,7 @@ nav {
     margin: 0;
 }
 
-li {
+nav li {
     display: inline;
     padding: 15px;
 }
@@ -93,4 +75,36 @@ nav a:hover {
 
 nav a:active {
     font-weight: bold;
+}
+
+form ul {
+    width:750px;
+    list-style-type:none;
+    list-style-position:outside;
+    margin:0px;
+    padding:0px;
+}
+
+form li{
+    padding:12px;
+    border-bottom:1px solid #eee;
+    position:relative;
+}
+
+form label{
+    width:150px;
+    margin-top: 3px;
+    display:inline-block;
+    float:left;
+    padding:3px;
+}
+
+form input{
+    height:20px;
+    width:220px;
+    padding:5px 8px;
+}
+
+form button{
+    margin-left:156px;
 }
