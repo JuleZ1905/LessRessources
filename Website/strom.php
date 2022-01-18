@@ -41,9 +41,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
             <canvas id="myChart"></canvas>
         </div>
 
-        <div class="fakten">
-            alee fakten
-        </div>
+
     </div>
 </body>
 

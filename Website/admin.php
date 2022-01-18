@@ -1,3 +1,12 @@
+<?php
+session_start();
+$isLoggedIn = false;
+if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
+    $isLoggedIn = true;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,11 +14,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="lib/css/admin.css" rel="stylesheet">
     <title>Eingabemaske</title>
     <style>
-        * {
-            margin: 15px;
-        }
+
 
         table {
             border-spacing: 0;
@@ -34,40 +42,71 @@
 </head>
 
 <body>
-    <h1>Eingabemaske</h1>
+
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="aboutUs.php">Über uns</a></li>
+                <li><a href="strom.php">Strom</a></li>
+                <?php
+                if ($isLoggedIn) {
+                    echo '<li><a href="admin.php">Admin</a></li>';
+                } else {
+                    echo '<li><a href="login.php">Login</a></li>';
+                }
+                ?>
+            </ul>
+        </nav>
+    </div>
+
+
+
+    <div class = "Uebeerschrift">
+            <p>Eingabemaske</p>
+    </div>
+
+
     <form class="forms" action="" method="POST">
+    <ul>
+<li>
         <label for="ress">Ressource: </label>
         <select name="ress" id="ress" required>
             <option value="" disabled selected>--Input--</option>
             <option value="Strom">Strom</option>
             <option value="Wasser">Wasser</option>
         </select>
+</li>
 
-        <br>
 
+<li>
         <label for="menge">Menge: </label>
         <input type="number" id="menge" name="menge" required>
+</li>
 
-        <br>
-
+<li>
         <label for="einheit">Einheit: </label>
         <select name="Einheit" id="einheit" required>
             <option value="" disabled selected>--Input--</option>
             <option value="kWh">kW/h</option>
             <option value="Liter">Liter</option>
         </select>
+</li>
 
-        <br>
-
+<li>
         <label for="von">Von: </label>
         <input type="date" id="von" name="von" value="" min="2019-01-01" max="<?php echo date("Y-m-d"); ?>" required>
+</li>
 
-        <br>
-
+<li>
         <label for="von">Bis: </label>
         <input type="date" id="bis" name="bis" value="" min="2019-01-01" max="<?php echo date("Y-m-d"); ?>" required>
         <br>
+        </li>
+        <li>
         <input class="btn" type="submit" value="Submit" name="submitBtn">
+</li>
+</ul>
     </form>
 
     <?php

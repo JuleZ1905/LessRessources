@@ -49,32 +49,34 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 
 
   <div class="text">
-    <p>
+
+    <div class="eins">
+        <h3>wer sind wir?</h3>
+    </div>
+    <div class="einstext">
     Das vierköpfige Team von „LessRessources“ aus der 4AX hat sich im Rahmen eines ITP-Projektes zusammengefunden,
     um den Ressourcenverbrauch an der Schule zu erheben <br>und gegebenenfalls auch zu reduzieren. Aufgrund von Zeitmangel für das erste, größere ITP-Projekt,
     befassen sie sich vorerst lediglich mit der Erfassung und Darstellung des Stromverbrauches auf ihrer eigens für das Projekt angelegten Website (lessressources.epizy.com).
     Somit soll für die Zukunft bewerkstelligt werden, inwieweit sich der Ressourcenverbrauch in den vergangenen Monaten verbessert oder auch verschlechtert hat.
         Das vierköpfige Team von „LessRessources“ aus der 4AX hat sich im Rahmen eines ITP-Projektes zusammengefunden,<br>
+
+    </div>
+
+
+
+    <div class="zweitext">
         um den Ressourcenverbrauch an der Schule zu erheben und gegebenenfalls auch zu reduzieren. Aufgrund von Zeitmangel für das erste, größere ITP-Projekt,
         befassen sie sich vorerst lediglich mit der Erfassung und Darstellung <br>des Stromverbrauches auf ihrer eigens für das Projekt angelegten Website (lessressources.epizy.com).
         Somit soll für die Zukunft bewerkstelligt werden, inwieweit sich der Ressourcenverbrauch in den vergangenen Monaten verbessert oder auch verschlechtert hat.
-            Das vierköpfige Team von „LessRessources“ aus der 4AX hat sich im Rahmen eines ITP-Projektes zusammengefunden,<br>
-            um den Ressourcenverbrauch an der Schule zu erheben und gegebenenfalls auch zu reduzieren. Aufgrund von Zeitmangel für das erste, größere ITP-Projekt,
-            befassen sie sich vorerst lediglich mit der Erfassung und Darstellung des Stromverbrauches auf ihrer eigens für das Projekt angelegten Website (lessressources.epizy.com).
-            Somit soll für die Zukunft bewerkstelligt werden, inwieweit sich der Ressourcenverbrauch in den vergangenen Monaten verbessert oder auch verschlechtert hat.
-                Das vierköpfige Team von „LessRessources“ aus der 4AX hat sich im Rahmen eines ITP-Projektes zusammengefunden,
-                um den Ressourcenverbrauch an der Schule zu erheben <br>und gegebenenfalls auch zu reduzieren. Aufgrund von Zeitmangel für das erste, größere ITP-Projekt,
-                befassen sie sich vorerst lediglich mit der Erfassung und Darstellung des Stromverbrauches auf ihrer eigens für das Projekt angelegten Website (lessressources.epizy.com).
-                Somit soll für die Zukunft bewerkstelligt werden, inwieweit sich der Ressourcenverbrauch in den vergangenen Monaten verbessert oder auch verschlechtert hat.
-                    Das vierköpfige Team von „LessRessources“ aus der 4AX hat sich im Rahmen eines ITP-Projektes zusammengefunden,<br>
-                    um den Ressourcenverbrauch an der Schule zu erheben und gegebenenfalls auch zu reduzieren. Aufgrund von Zeitmangel für das erste, größere ITP-Projekt,
-                    befassen sie sich vorerst lediglich mit der Erfassung und Darstellung <br>des Stromverbrauches auf ihrer eigens für das Projekt angelegten Website (lessressources.epizy.com).
-                    Somit soll für die Zukunft bewerkstelligt werden, inwieweit sich der Ressourcenverbrauch in den vergangenen Monaten verbessert oder auch verschlechtert hat.
-                        Das vierköpfige Team von „LessRessources“ aus der 4AX hat sich im Rahmen eines ITP-Projektes zusammengefunden,<br>
-                        um den Ressourcenverbrauch an der Schule zu erheben und gegebenenfalls auch zu reduzieren. Aufgrund von Zeitmangel für das erste, größere ITP-Projekt,
-                        befassen sie sich vorerst lediglich mit der Erfassung und Darstellung des Stromverbrauches auf ihrer eigens für das Projekt angelegten Website (lessressources.epizy.com).
-                        Somit soll für die Zukunft bewerkstelligt werden, inwieweit sich der Ressourcenverbrauch in den vergangenen Monaten verbessert oder auch verschlechtert hat.
-    </p>
+
+
+    </div>
+
+   <div class="zwei">
+     <h3>Was machen wir?</h3>
+   </div>
+
+
  </div>
 
 
