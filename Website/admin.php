@@ -88,7 +88,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
     </form>
 
     <?php
-    require_once "lib/DB_connection/DB.php";
+    require_once 'lib/DB_connection/DB.php';
 
     function console_log($data)
     {
