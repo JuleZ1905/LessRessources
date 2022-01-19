@@ -5,8 +5,8 @@
     if (isset($_POST['LOGIN'])) {
         $sql = "SELECT password FROM Admin;";
         $stmt = $db->query($sql);
+        print("here");
         $stmt2 = $stmt->fetch(PDO::FETCH_ASSOC);
-
         $sql2 = "SELECT username FROM Admin;";
         $stmt3 = $db->query($sql2);
         $stmt4 = $stmt3->fetch(PDO::FETCH_ASSOC);
