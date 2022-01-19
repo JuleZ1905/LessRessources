@@ -1,124 +1,106 @@
 body {
-    margin: 0 auto;
-    background-image: url("../lib/.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 720px;
+  background-color: #b9eca9;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.main {
+  background-color: #ffffff;
+  width: 400px;
+  height: 400px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.sign {
+  padding-top: 40px;
+  color: #12a136bb;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}
+
+.name {
+  width: 76%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 27px;
+  margin-left: 46px;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  transition-duration: 500ms;
+}
+
+.form1 {
+  padding-top: 30px;
+}
+
+.password {
+  width: 76%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 50px;
+  margin-left: 46px;
+  text-align: center;
+  margin-bottom: 39px;
+  font-family: "Ubuntu", sans-serif;
+  transition-duration: 500ms;
+}
+
+.name:focus,
+.password:focus {
+  border: 2px solid rgb(0, 0, 0, 0.18);
+}
+
+.name:hover,
+.password:hover {
+  border: 2px solid rgba(0, 0, 0, 0.18);
+}
+
+.submit {
+  cursor: pointer;
+  border-radius: 5em;
+  color: #fff;
+  background: linear-gradient(to right, #12a136bb, #12c54e);
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  
+  padding-top: 10px;
+  font-family: "Ubuntu", sans-serif;
+  margin-left: 35%;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+#loginError {
+    color: red;
     text-align: center;
-    height: 100vh;
+    display: none;
 }
 
-.container {
-    width: 500px;
-    height: 450px;
-    text-align: center;
-    margin: 0 auto;
-    background-color: rgba(44, 62, 80, 0.7);
-    margin-top: 160px;
-}
-
-.container img {
-    width: 200px;
-    height: 150px;
-    margin-top: -60px;
-}
-
-input[type="text"],
-input[type="password"] {
-    margin-top: 30px;
-    height: 45px;
-    width: 300px;
-    font-size: 18px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    padding-left: 40px;
-}
-
-.form-input::before {
-    content: "\f007";
-    font-family: "FontAwesome";
-    padding-left: 07px;
-    padding-top: 40px;
-    position: absolute;
-    font-size: 35px;
-    color: #2980b9;
-}
-
-.form-input:nth-child(2)::before {
-    content: "\f023";
-}
-
-.btn-login {
-    padding: 15px 25px;
-    border: none;
-    background-color: #27ae60;
-    color: #fff;
-    font-size: 18px;
-    margin-top: 20px;
-}
-
-form {
-    margin-top: 20px;
-}
-
-.form-popup {
-    position: center;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
-    text-align: center;
-}
-
-
-
-.navbar {
-    background-color: rgba(157, 182, 183, 0.51);
-    position: fixed;
-    top: 0;
-    height: 70px;
-    width: 100%;
-    z-index: 2;
-    line-height: 50px;
-    text-align: center;
-
-}
-
-.navbar img {
-    width: 150px;
-    padding: 15px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav {
-    float: right;
-    margin: 0;
-}
-
-li {
-    display: inline;
-    padding: 15px;
-}
-
-nav a {
-
-    text-decoration: none;
-    color: #2f2d2d;
-    display: inline-block;
-    padding-top: 15px;
-    font-size: 1.5em;
-    vertical-align: middle;
-    line-height: normal;
-}
-
-nav a:hover {
-    color: #00b2b2;
-}
-
-nav a:active {
-    font-weight: bold;
+@media (max-width: 600px) {
+  .main {
+    border-radius: 0px;
+  }
 }

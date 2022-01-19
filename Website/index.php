@@ -25,7 +25,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
                 <li><a href="strom.php">Strom</a></li>
                 <?php
                 if ($isLoggedIn) {
-                    echo '<li><a href="admin.php">Admin</a></li>';
+                    echo '<li><a href="login.php">Admin</a></li>';
                 } else {
                     echo '<li><a href="login.php">Login</a></li>';
                 }
