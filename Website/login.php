@@ -3,18 +3,20 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="lib/css/login.css">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login</title>
+
+    <link rel="stylesheet" href="lib/css/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="shortcut icon" href="lib/pictures/Logo_Icon.png" type="image/x-icon">
     <script defer src="lib/js/login.js"></script>
 </head>
 
 <body>
 
     <div class="main">
-        <img class="logo" src="lib/pictures/neu Logo.png">
-        <p class="sign">Login to Admin</p>
+        <img class="logo" src="lib/pictures/Logo.png">
+        <p class="sign">Login to Admin-Panel</p>
         <form class="form1" method="POST" action="login.php">
             <input class="name" type="text" name="name" placeholder="Username" required>
             <input class="password" type="password" name="password" placeholder="Password" required>

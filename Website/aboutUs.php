@@ -13,6 +13,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 <head>
     <meta charset="UTF-8">
     <title>LessRessources</title>
+    <link rel="shortcut icon" href="lib/pictures/Logo_Icon.png" type="image/x-icon">
     <link href="lib/css/ueberuns.css" rel="stylesheet">
 </head>
 

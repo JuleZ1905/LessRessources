@@ -14,6 +14,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
     <meta charset="UTF-8">
     <title>LessRessources</title>
     <link href="lib/css/css.css" rel="stylesheet">
+    <link rel="shortcut icon" href="lib/pictures/Logo_Icon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -25,7 +26,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
                 <li><a href="strom.php">Strom</a></li>
                 <?php
                 if ($isLoggedIn) {
-                    echo '<li><a href="login.php">Admin</a></li>';
+                    echo '<li><a href="admin.php">Admin</a></li>';
                 } else {
                     echo '<li><a href="login.php">Login</a></li>';
                 }
