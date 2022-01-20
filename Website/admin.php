@@ -43,66 +43,21 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
         <p>Admin-Panel</p>
     </div>
 
-    <!-- <ul>
-            <li>
-                <label for="ress">Ressource: </label>
-                <select name="ress" id="ress" required>
-                    <option value="" disabled selected>--Input--</option>
-                    <option value="Strom">Strom</option>
-                    <option value="Wasser">Wasser</option>
-                </select>
-            </li>
-
-            <li>
-                <label for="menge">Menge: </label>
-                <input type="number" id="menge" name="menge" required>
-            </li>
-
-            <li>
-                <label for="einheit">Einheit: </label>
-                <select name="Einheit" id="einheit" required>
-                    <option value="" disabled selected>--Input--</option>
-                    <option value="kWh">kW/h</option>
-                    <option value="Liter">Liter</option>
-                </select>
-            </li>
-
-            <li>
-                <label for="von">Von: </label>
-                <input type="date" id="von" name="von" value="" min="2019-01-01" max="<?php //echo date("Y-m-d"); 
-                                                                                        ?>" required>
-            </li>
-
-            <li>
-                <label for="von">Bis: </label>
-                <input type="date" id="bis" name="bis" value="" min="2019-01-01" max="<?php //echo date("Y-m-d"); 
-                                                                                        ?>" required>
-                <br>
-            </li>
-            <li>
-                <input class="btn" type="submit" value="Submit" name="submitBtn">
-            </li>
-        </ul> -->
-
     <form class="forms" action="" method="POST">
         <div class="forms_body">
             <div class="input_line data_input_div">
-                <h1 id="data_input">Dateninput</h3>
+                <h1 id="data_input">Dateninput</h1>
             </div>
             <div class="input_line">
                 <p class="text_position">Ressource:</p>
-                <input type="radio" name="ress" id="ress" checked>
+                <input type="radio" name="ress" value="Strom" id="ress" checked>
                 <label for="ress">Strom</label>
             </div>
-
-            <br>
 
             <div class="input_line">
                 <p class="text_position" for="menge">Menge:</p>
                 <input type="number" id="menge" name="menge" required>
             </div>
-
-            <br>
 
             <div class="input_line">
                 <p class="text_position">Einheit:</p>
@@ -150,6 +105,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 
         $dateOK = false;
         $valuesOK = false;
+        $amountOK = false;
 
         if ($von < $bis) {
             $dateOK = true;
@@ -159,7 +115,11 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
             $valuesOK = true;
         }
 
-        if ($dateOK && $valuesOK) {
+        if ($menge > 0) {
+            $amountOK = true;
+        }
+
+        if ($dateOK && $valuesOK && $amountOK) {
 
             $sql = "INSERT INTO Ressource (Bezeichnung, Menge, Einheit, von, bis)
             VALUE (:newResource, :menge, :einheit, :von, :bis);";
@@ -182,29 +142,31 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
     $stmt = $db->query($sql1);
     ?>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Bezeichnung</th>
-                <th>Menge</th>
-                <th>Einheit</th>
-                <th>Von</th>
-                <th>Bis</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($row['Bezeichnung']); ?></td>
-                    <td><?php echo htmlspecialchars($row['Menge']); ?></td>
-                    <td><?php echo htmlspecialchars($row['Einheit']); ?></td>
-                    <td><?php echo htmlspecialchars($row['von']); ?></td>
-                    <td><?php echo htmlspecialchars($row['bis']); ?></td>
+    <div class="dataTable">
+        <h1 id="data_input">Datenbank</h1>
+        <table>
+            <thead>
+                <tr class="headRow">
+                    <th>Bezeichnung</th>
+                    <th>Menge</th>
+                    <th>Einheit</th>
+                    <th>Von</th>
+                    <th>Bis</th>
                 </tr>
-            <?php endwhile; ?>
-        </tbody>
-    </table>
-    <!--<button id="clearBTN">Clear</button>-->
+            </thead>
+            <tbody>
+                <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($row['Bezeichnung']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Menge']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Einheit']); ?></td>
+                        <td><?php echo htmlspecialchars($row['von']); ?></td>
+                        <td><?php echo htmlspecialchars($row['bis']); ?></td>
+                    </tr>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>
