@@ -56,7 +56,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 
             <div class="input_line">
                 <p class="text_position" for="menge">Menge:</p>
-                <input type="number" id="menge" name="menge" required>
+                <input type="number" id="menge" name="menge" required min=0>
             </div>
 
             <div class="input_line">
@@ -107,6 +107,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
         $valuesOK = false;
         $amountOK = false;
 
+
         if ($von < $bis) {
             $dateOK = true;
         }
@@ -132,10 +133,10 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
                 ':von' => $von,
                 ':bis' => $bis
             ]);
+            echo "<meta http-equiv='refresh' content='0'>";
         } else {
             echo 'ACHTUNG: Das Datum wurde zeitlich nicht richtig eingetragen. Bitte gib deine Daten nochmal ein!';
-        }
-        echo "<meta http-equiv='refresh' content='0'>";
+        }  
     }
 
     $sql1 = "SELECT Bezeichnung, Menge, Einheit, von, bis FROM Ressource ORDER BY von;";
