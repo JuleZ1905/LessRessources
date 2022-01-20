@@ -7,18 +7,22 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login</title>
-    
+    <script defer src="lib/js/login.js"></script>
 </head>
 
 <body>
 
     <div class="main">
-        <p class="sign">Login</p>
+        <img class="logo" src="lib/pictures/neu Logo.png">
+        <p class="sign">Login to Admin</p>
         <form class="form1" method="POST" action="login.php">
             <input class="name" type="text" name="name" placeholder="Username" required>
             <input class="password" type="password" name="password" placeholder="Password" required>
-            <button type="submit" name="LOGIN" class="submit">Submit</button>
             <p id="loginError">Invalid username or password!</p>
+            <div class="buttons">
+                <button type="button" id="btn_back">Go back</button>
+                <button type="submit" name="LOGIN" class="submit">Submit</button>
+            </div>
         </form>
     </div>
 
