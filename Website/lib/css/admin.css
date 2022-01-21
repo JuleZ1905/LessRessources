@@ -4,16 +4,7 @@
 
 body {
     margin: 0;
-    background-color: #b9eca9;
-}
-
-
-.navbar {
-    background-color: rgba(157, 182, 183, 0.51);
-    position: fixed;
-    top: 0%;
-    height: 50px;
-    width: 100%;
+    background-color: #d2f0ca;
 }
 
 table {
@@ -25,7 +16,6 @@ td {
     border-bottom: 0.5px solid black;
     padding: 15px;
 }
-
 
 .forms {
     background-color: white;
@@ -114,6 +104,20 @@ label {
     z-index: 2;
     line-height: 50px;
     text-align: center;
+}
+
+.trash {
+    height: 40px;
+    width: 40px;
+    border: -1px solid black;
+    border-radius: 100%;
+    border-bottom: 0;
+    transition: 0.3s;
+}
+
+.trash:hover {
+    cursor: pointer;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
 
 .navbar img {
