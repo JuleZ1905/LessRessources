@@ -14,13 +14,12 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="lib/css/admin.css" rel="stylesheet">
-    <title>Eingabemaske</title>
-    <script src="JavaScript/script.js" defer></script>
+    <link href="lib/css/admin.css" rel="stylesheet">
+    <link rel="shortcut icon" href="lib/pictures/Logo_Icon.png" type="image/x-icon">
+    <title>Admin-Panel</title>
 </head>
 
 <body>
-
     <div class="navbar">
         <nav>
             <ul>
@@ -40,51 +39,45 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 
 
 
-    <div class = "Uebeerschrift">
-            <p>Eingabemaske</p>
+    <div class="Uebeerschrift">
+        <p>Admin-Panel</p>
     </div>
 
-
     <form class="forms" action="" method="POST">
-    <ul>
-<li>
-        <label for="ress">Ressource: </label>
-        <select name="ress" id="ress" required>
-            <option value="" disabled selected>--Input--</option>
-            <option value="Strom">Strom</option>
-            <option value="Wasser">Wasser</option>
-        </select>
-</li>
+        <div class="forms_body">
+            <div class="input_line data_input_div">
+                <h1 id="data_input">Dateninput</h1>
+            </div>
+            <div class="input_line">
+                <p class="text_position">Ressource:</p>
+                <input type="radio" name="ress" value="Strom" id="ress" checked>
+                <label for="ress">Strom</label>
+            </div>
 
+            <div class="input_line">
+                <p class="text_position" for="menge">Menge:</p>
+                <input type="number" id="menge" name="menge" required min=0>
+            </div>
 
-<li>
-        <label for="menge">Menge: </label>
-        <input type="number" id="menge" name="menge" required>
-</li>
+            <div class="input_line">
+                <p class="text_position">Einheit:</p>
+                <input type="radio" name="einheit" value="kWh" id="einheit" checked>
+                <label for="einheit">kWh</label>
+            </div>
 
-<li>
-        <label for="einheit">Einheit: </label>
-        <select name="Einheit" id="einheit" required>
-            <option value="" disabled selected>--Input--</option>
-            <option value="kWh">kW/h</option>
-            <option value="Liter">Liter</option>
-        </select>
-</li>
+            <div class="input_line">
+                <p class="text_position">Von:</p>
+                <input type="date" id="von" name="von" min="2019-01-01" max="<?php echo date("Y-m-d"); ?>" required>
+            </div>
 
-<li>
-        <label for="von">Von: </label>
-        <input type="date" id="von" name="von" value="" min="2019-01-01" max="<?php echo date("Y-m-d"); ?>" required>
-</li>
-
-<li>
-        <label for="von">Bis: </label>
-        <input type="date" id="bis" name="bis" value="" min="2019-01-01" max="<?php echo date("Y-m-d"); ?>" required>
-        <br>
-        </li>
-        <li>
-        <input class="btn" type="submit" value="Submit" name="submitBtn">
-</li>
-</ul>
+            <div class="input_line">
+                <p class="text_position">Bis:</p>
+                <input type="date" id="bis" name="bis" min="2019-01-01" max="<?php echo date("Y-m-d"); ?>" required>
+            </div>
+            <div class="input_line btn_submit_div">
+                <button class="btn_submit" name="submitBtn" type="submit">Submit</button>
+            </div>
+        </div>
     </form>
 
     <?php
@@ -98,25 +91,13 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 
         echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
     }
-    /*
-    function clearDatabase() {
-        console_log("Bin da");
-        require_once "dbContent/DB.php";
-        console_log("Bin immer noch da");
-        $sql3 = "DELETE FROM Ressource
-        WHERE pk_ressource_ID IN (SELECT pk_ressource_ID FROM Ressource);";
-        $statement = $db->prepare($sql3);
-        $statement->execute();
-        echo "<meta http-equiv='refresh' content='0'>";
-    }*/
-
 
 
     if (isset($_POST['submitBtn'])) {
-
+        console_log("hello");
         $newResource = $_POST['ress'];
         $menge = $_POST['menge'];
-        $einheit = $_POST['Einheit'];
+        $einheit = $_POST['einheit'];
         $von = $_POST['von'];
         $bis = $_POST['bis'];
 
@@ -124,6 +105,8 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 
         $dateOK = false;
         $valuesOK = false;
+        $amountOK = false;
+
 
         if ($von < $bis) {
             $dateOK = true;
@@ -133,8 +116,12 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
             $valuesOK = true;
         }
 
-        if ($dateOK && $valuesOK) {
-            
+        if ($menge > 0) {
+            $amountOK = true;
+        }
+
+        if ($dateOK && $valuesOK && $amountOK) {
+
             $sql = "INSERT INTO Ressource (Bezeichnung, Menge, Einheit, von, bis)
             VALUE (:newResource, :menge, :einheit, :von, :bis);";
 
@@ -146,39 +133,41 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
                 ':von' => $von,
                 ':bis' => $bis
             ]);
+            echo "<meta http-equiv='refresh' content='0'>";
         } else {
             echo 'ACHTUNG: Das Datum wurde zeitlich nicht richtig eingetragen. Bitte gib deine Daten nochmal ein!';
-        }
-        echo "<meta http-equiv='refresh' content='0'>";
+        }  
     }
 
     $sql1 = "SELECT Bezeichnung, Menge, Einheit, von, bis FROM Ressource ORDER BY von;";
     $stmt = $db->query($sql1);
     ?>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Bezeichnung</th>
-                <th>Menge</th>
-                <th>Einheit</th>
-                <th>Von</th>
-                <th>Bis</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($row['Bezeichnung']); ?></td>
-                    <td><?php echo htmlspecialchars($row['Menge']); ?></td>
-                    <td><?php echo htmlspecialchars($row['Einheit']); ?></td>
-                    <td><?php echo htmlspecialchars($row['von']); ?></td>
-                    <td><?php echo htmlspecialchars($row['bis']); ?></td>
+    <div class="dataTable">
+        <h1 id="data_input">Datenbank</h1>
+        <table>
+            <thead>
+                <tr class="headRow">
+                    <th>Bezeichnung</th>
+                    <th>Menge</th>
+                    <th>Einheit</th>
+                    <th>Von</th>
+                    <th>Bis</th>
                 </tr>
-            <?php endwhile; ?>
-        </tbody>
-    </table>
-    <!--<button id="clearBTN">Clear</button>-->
+            </thead>
+            <tbody>
+                <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($row['Bezeichnung']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Menge']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Einheit']); ?></td>
+                        <td><?php echo htmlspecialchars($row['von']); ?></td>
+                        <td><?php echo htmlspecialchars($row['bis']); ?></td>
+                    </tr>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>

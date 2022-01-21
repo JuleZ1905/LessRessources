@@ -13,6 +13,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 <head>
     <meta charset="UTF-8">
     <title>LessRessources</title>
+    <link rel="shortcut icon" href="lib/pictures/Logo_Icon.png" type="image/x-icon">
     <link href="lib/css/strom.css" rel="stylesheet">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
     <script defer src="lib/js/strom.js"></script>
