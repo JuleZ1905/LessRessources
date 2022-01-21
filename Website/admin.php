@@ -142,6 +142,25 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
         }
     }
 
+    if (isset($_POST["ressource"])) {
+        $sql = "DELETE
+        FROM Ressource
+        WHERE Bezeichnung = :ressource
+          AND Menge = :amount
+          AND Einheit = :unit
+          AND von = :from
+          AND bis = :to;";
+
+        $statement = $db->prepare($sql);
+        $statement->execute([
+            ':ressource' => $_POST["ressource"],
+            ':amount' => $_POST["amount"],
+            ':unit' => $_POST["unit"],
+            ':from' => $_POST["from"],
+            ':to' => $_POST["to"]
+        ]);
+    }
+
     $sql1 = "SELECT Bezeichnung, Menge, Einheit, von, bis FROM Ressource ORDER BY von;";
     $stmt = $db->query($sql1);
     ?>
