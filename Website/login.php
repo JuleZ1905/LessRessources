@@ -50,7 +50,7 @@ if (isset($_POST['LOGIN'])) {
         $_SESSION['isLoggedIn'] = true;
         header('Location: index.php');
     } else {
-        echo '<script defer> document.getElementById("loginError").style.display = "block"; </script>';
+        echo '<script> document.getElementById("loginError").style.display = "block"; </script>';
     }
 }
 

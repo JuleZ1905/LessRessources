@@ -48,7 +48,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 
     <form class="forms" action="" method="POST">
         <div class="forms_body">
-            <div class="input_line data_input_div">
+            <div class="input_line centerDivContent">
                 <h1 id="data_input">Dateninput</h1>
             </div>
             <div class="input_line">
@@ -77,7 +77,12 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
                 <p class="text_position">Bis:</p>
                 <input type="date" id="bis" name="bis" min="2019-01-01" max="<?php echo date("Y-m-d"); ?>" required>
             </div>
-            <div class="input_line btn_submit_div">
+
+            <div class="error centerDivContent">
+                <p class="inputError">Ungültiger Dateninput, bitte probiere es nochmal!</p>
+            </div>
+
+            <div class="input_line centerDivContent">
                 <button class="btn_submit" name="submitBtn" type="submit">Submit</button>
             </div>
         </div>
@@ -137,8 +142,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
             ]);
             echo "<meta http-equiv='refresh' content='0'>";
         } else {
-            echo 'ACHTUNG: Das Datum wurde zeitlich nicht richtig eingetragen. Bitte gib deine Daten nochmal ein!';
-            echo '<script> sayHello(); </script>';
+            echo '<script defer> document.getElementsByClassName("error")[0].style.display = "flex"; </script>';
         }
     }
 

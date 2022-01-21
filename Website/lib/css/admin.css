@@ -44,7 +44,17 @@ td {
     align-items: center;
 }
 
-.btn_submit_div {
+.error {
+    display: none;
+}
+
+.inputError {
+    color: red;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.centerDivContent {
     justify-content: center;
 }
 
@@ -63,10 +73,6 @@ td {
 
 #data_input {
     color: #3aaa35;
-}
-
-.data_input_div {
-    justify-content: center;
 }
 
 input[type=radio] {
@@ -93,6 +99,7 @@ label {
     margin-left: auto;
     width: fit-content;
     font-size: 80px;
+    color: #3aaa35;
 }
 
 .navbar {
