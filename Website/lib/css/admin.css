@@ -4,16 +4,7 @@
 
 body {
     margin: 0;
-    background-color: #b9eca9;
-}
-
-
-.navbar {
-    background-color: rgba(157, 182, 183, 0.51);
-    position: fixed;
-    top: 0%;
-    height: 50px;
-    width: 100%;
+    background-color: #d2f0ca;
 }
 
 table {
@@ -25,7 +16,6 @@ td {
     border-bottom: 0.5px solid black;
     padding: 15px;
 }
-
 
 .forms {
     background-color: white;
@@ -54,7 +44,17 @@ td {
     align-items: center;
 }
 
-.btn_submit_div {
+.error {
+    display: none;
+}
+
+.inputError {
+    color: red;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.centerDivContent {
     justify-content: center;
 }
 
@@ -75,10 +75,6 @@ td {
     color: #3aaa35;
 }
 
-.data_input_div {
-    justify-content: center;
-}
-
 input[type=radio] {
     margin: 0;
 }
@@ -95,6 +91,7 @@ label {
     text-align: center;
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
     border-radius: 4%;
+    height: 370px;
 }
 
 .Uebeerschrift {
@@ -103,6 +100,7 @@ label {
     margin-left: auto;
     width: fit-content;
     font-size: 80px;
+    color: #3aaa35;
 }
 
 .navbar {
@@ -114,6 +112,20 @@ label {
     z-index: 2;
     line-height: 50px;
     text-align: center;
+}
+
+.trash {
+    height: 40px;
+    width: 40px;
+    border: -1px solid black;
+    border-radius: 100%;
+    border-bottom: 0;
+    transition: 0.3s;
+}
+
+.trash:hover {
+    cursor: pointer;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
 
 .navbar img {
@@ -153,4 +165,15 @@ nav a:hover {
 
 nav a:active {
     font-weight: bold;
+}
+
+.scroll {
+    height: 350px;
+    overflow: auto;
+    margin-top: 20px;
+    z-index: 2;
+}
+
+.bezeichnung {
+    z-index: 3;
 }
