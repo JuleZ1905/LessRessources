@@ -5,15 +5,15 @@ $(document).ready(function() {
             var ressource = row.find(".ressource").text();
             var amount = row.find(".amount").text();
             var unit = row.find(".unit").text();
-            var from = row.find(".from").text();
-            var to = row.find(".to").text();
+            var month = row.find(".month").text();
+            var year = row.find(".year").text();
 
             let data = {
                 ressource: ressource,
                 amount: amount,
                 unit: unit,
-                from: from,
-                to: to,
+                month: month,
+                year: year,
             };
 
             $.post('admin.php', data).done(function() {
