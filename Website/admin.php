@@ -190,14 +190,53 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
                 </tr>
             </thead>
             <tbody>
-
                 <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
                     <tr>
                         <td class="ressource"><?php echo htmlspecialchars($row['Bezeichnung']); ?></td>
                         <td class="amount"><?php echo htmlspecialchars($row['Menge']); ?></td>
                         <td class="unit"><?php echo htmlspecialchars($row['Einheit']); ?></td>
-                        <td class="month"><?php //TODO: add names instead of numbers with switch statement
-                        echo htmlspecialchars($row['Monat']); ?></td>
+                        <td class="month"><?php
+                                            switch ($row['Monat']) {
+                                                case 1:
+                                                    echo "Januar";
+                                                    break;
+                                                case 2:
+                                                    echo "Februar";
+                                                    break;
+                                                case 3:
+                                                    echo "März";
+                                                    break;
+                                                case 4:
+                                                    echo "April";
+                                                    break;
+                                                case 5:
+                                                    echo "Mai";
+                                                    break;
+                                                case 6:
+                                                    echo "Juni";
+                                                    break;
+                                                case 7:
+                                                    echo "Juli";
+                                                    break;
+                                                case 8:
+                                                    echo "August";
+                                                    break;
+                                                case 9:
+                                                    echo "September";
+                                                    break;
+                                                case 10:
+                                                    echo "Oktober";
+                                                    break;
+                                                case 11:
+                                                    echo "November";
+                                                    break;
+                                                case 12:
+                                                    echo "Dezember";
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
+                                            ?></td>
                         <td class="year"><?php echo htmlspecialchars($row['Jahr']); ?></td>
                         <td><img class="trash" src="lib/pictures/Trash_Icon.png" alt=""></td>
                     </tr>
