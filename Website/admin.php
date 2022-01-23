@@ -18,8 +18,8 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="lib/pictures/Logo_Icon.png" type="image/x-icon">
     <link href="lib/css/admin.css" rel="stylesheet">
-    <script defer src="lib/js/admin.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="lib/js/admin.js"></script>
     <title>Admin-Panel</title>
 </head>
 
@@ -72,18 +72,18 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
                 <p class="text_position">Monat:</p>
                 <select name="month" id="months" required>
                     <option value="" selected disabled>-- select --</option>
-                    <option value="Januar">Januar</option>
-                    <option value="Februar">Februar</option>
-                    <option value="März">März</option>
-                    <option value="April">April</option>
-                    <option value="Mai">Mai</option>
-                    <option value="Juni">Juni</option>
-                    <option value="Juli">Juli</option>
-                    <option value="August">August</option>
-                    <option value="September">September</option>
-                    <option value="Oktober">Oktober</option>
-                    <option value="November">November</option>
-                    <option value="Dezember">Dezember</option>
+                    <option value="1">Januar</option>
+                    <option value="2">Februar</option>
+                    <option value="3">März</option>
+                    <option value="4">April</option>
+                    <option value="5">Mai</option>
+                    <option value="6">Juni</option>
+                    <option value="7">Juli</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">Oktober</option>
+                    <option value="11">November</option>
+                    <option value="12">Dezember</option>
                 </select>
             </div>
 
@@ -173,7 +173,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
         ]);
     }
 
-    $sql1 = "SELECT Bezeichnung, Menge, Einheit, Monat, Jahr FROM Ressource";
+    $sql1 = "SELECT Bezeichnung, Menge, Einheit, Monat, Jahr FROM Ressource ORDER BY Jahr, Monat";
     $stmt = $db->query($sql1);
     ?>
 
@@ -190,13 +190,53 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
                 </tr>
             </thead>
             <tbody>
-
                 <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
                     <tr>
                         <td class="ressource"><?php echo htmlspecialchars($row['Bezeichnung']); ?></td>
                         <td class="amount"><?php echo htmlspecialchars($row['Menge']); ?></td>
                         <td class="unit"><?php echo htmlspecialchars($row['Einheit']); ?></td>
-                        <td class="month"><?php echo htmlspecialchars($row['Monat']); ?></td>
+                        <td class="month"><?php
+                                            switch ($row['Monat']) {
+                                                case 1:
+                                                    echo "Januar";
+                                                    break;
+                                                case 2:
+                                                    echo "Februar";
+                                                    break;
+                                                case 3:
+                                                    echo "März";
+                                                    break;
+                                                case 4:
+                                                    echo "April";
+                                                    break;
+                                                case 5:
+                                                    echo "Mai";
+                                                    break;
+                                                case 6:
+                                                    echo "Juni";
+                                                    break;
+                                                case 7:
+                                                    echo "Juli";
+                                                    break;
+                                                case 8:
+                                                    echo "August";
+                                                    break;
+                                                case 9:
+                                                    echo "September";
+                                                    break;
+                                                case 10:
+                                                    echo "Oktober";
+                                                    break;
+                                                case 11:
+                                                    echo "November";
+                                                    break;
+                                                case 12:
+                                                    echo "Dezember";
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
+                                            ?></td>
                         <td class="year"><?php echo htmlspecialchars($row['Jahr']); ?></td>
                         <td><img class="trash" src="lib/pictures/Trash_Icon.png" alt=""></td>
                     </tr>

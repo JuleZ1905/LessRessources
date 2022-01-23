@@ -1,31 +1,19 @@
 <?php
 
-use DB_dataCollection\DataAmount\DataAmount;
-use DB_dataCollection\MonthlyAmount\MonthlyAmount;
-
-require_once 'dataClasses/DataAmount.php';
-require_once 'dataClasses/MonthlyAmount.php';
 
 class Seeder
 {
-
     public static function seed()
     {
+        require_once '../DB_connection/DB.php';
 
-        $sql = 
+        $sql = "SELECT Jahr, Monat, Menge FROM Ressource ORDER BY Jahr, Monat;";
+        $stmt = $db->query($sql);
+        $data = array();
 
-    
-        $data[] = new DataAmount(2019, [
-            new MonthlyAmount("Januar", 45670),
-            new MonthlyAmount("Februar", 6590),
-            new MonthlyAmount("März", 3072),
-        ]);
-        
-        $data[] = new DataAmount(2020, [
-            new MonthlyAmount("Januar", 45670),
-            new MonthlyAmount("Februar", 6590),
-            new MonthlyAmount("März", 3072),
-        ]);
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $data[$row["Jahr"]][$row["Monat"]] = $row["Menge"];
+        }
 
         return $data;
     }
