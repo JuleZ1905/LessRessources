@@ -69,13 +69,35 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
             </div>
 
             <div class="input_line">
-                <p class="text_position">Von:</p>
-                <input type="date" id="von" name="von" min="2019-01-01" max="<?php echo date("Y-m-d"); ?>" required>
+                <p class="text_position">Monat:</p>
+                <select name="month" id="months" required>
+                    <option value="" selected disabled>-- select --</option>
+                    <option value="Januar">Januar</option>
+                    <option value="Februar">Februar</option>
+                    <option value="März">März</option>
+                    <option value="April">April</option>
+                    <option value="Mai">Mai</option>
+                    <option value="Juni">Juni</option>
+                    <option value="Juli">Juli</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="Oktober">Oktober</option>
+                    <option value="November">November</option>
+                    <option value="Dezember">Dezember</option>
+                </select>
             </div>
 
             <div class="input_line">
-                <p class="text_position">Bis:</p>
-                <input type="date" id="bis" name="bis" min="2019-01-01" max="<?php echo date("Y-m-d"); ?>" required>
+                <p class="text_position">Jahr: </p>
+                <select name="year" id="year" required>
+                    <option value="" selected disabled>-- select --</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                </select>
             </div>
 
             <div class="error centerDivContent">
@@ -105,45 +127,31 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
         $newResource = $_POST['ress'];
         $menge = $_POST['menge'];
         $einheit = $_POST['einheit'];
-        $von = $_POST['von'];
-        $bis = $_POST['bis'];
+        $month = $_POST['month'];
+        $year = $_POST['year'];
 
-        $resources = array('Strom' => 'kWh', 'Wasser' => 'Liter');
+        $nRows = $db->query("SELECT Menge FROM Ressource WHERE Jahr = '$year' AND Monat = '$month';")->fetchColumn();
 
-        $dateOK = false;
-        $valuesOK = false;
-        $amountOK = false;
-
-
-        if ($von < $bis) {
-            $dateOK = true;
-        }
-
-        if (array_search($einheit, $resources) == $newResource) {
-            $valuesOK = true;
-        }
-
-        if ($menge > 0) {
-            $amountOK = true;
-        }
-
-        if ($dateOK && $valuesOK && $amountOK) {
-
-            $sql = "INSERT INTO Ressource (Bezeichnung, Menge, Einheit, von, bis)
-            VALUE (:newResource, :menge, :einheit, :von, :bis);";
+        if ($nRows > 0) {
+            $sql = "UPDATE Ressource
+            SET Menge = $menge + (SELECT Menge FROM Ressource WHERE Jahr = '$year' AND Monat = '$month')
+            WHERE Jahr = '$year'
+              AND Monat = '$month';";
+            $db->prepare($sql)->execute();
+        } else {
+            $sql = "INSERT INTO Ressource (Bezeichnung, Menge, Einheit, Monat, Jahr)
+            VALUE (:newResource, :menge, :einheit, :month, :year);";
 
             $statement = $db->prepare($sql);
             $statement->execute([
                 ':newResource' => $newResource,
                 ':menge' => $menge,
                 ':einheit' => $einheit,
-                ':von' => $von,
-                ':bis' => $bis
+                ':month' => $month,
+                ':year' => $year
             ]);
-            echo "<meta http-equiv='refresh' content='0'>";
-        } else {
-            echo '<script defer> document.getElementsByClassName("error")[0].style.display = "flex"; </script>';
         }
+        echo "<meta http-equiv='refresh' content='0'>";
     }
 
     if (isset($_POST["ressource"])) {
@@ -152,53 +160,49 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
         WHERE Bezeichnung = :ressource
           AND Menge = :amount
           AND Einheit = :unit
-          AND von = :from
-          AND bis = :to;";
+          AND Monat = :month
+          AND Jahr = :year";
 
         $statement = $db->prepare($sql);
         $statement->execute([
             ':ressource' => $_POST["ressource"],
             ':amount' => $_POST["amount"],
             ':unit' => $_POST["unit"],
-            ':from' => $_POST["from"],
-            ':to' => $_POST["to"]
+            ':month' => $_POST["month"],
+            ':year' => $_POST["year"]
         ]);
     }
 
-    $sql1 = "SELECT Bezeichnung, Menge, Einheit, von, bis FROM Ressource ORDER BY von;";
+    $sql1 = "SELECT Bezeichnung, Menge, Einheit, Monat, Jahr FROM Ressource";
     $stmt = $db->query($sql1);
     ?>
 
     <div class="dataTable">
-
         <h1 id="data_input">Datenbank</h1>
-        <div class="scroll">
-            <table>
-                <thead>
-                    <tr class="headRow">
-                        <th><span class="bezeichnung">Bezeichnung</span></th>
-                        <th><span class="bezeichnung">Menge</span></th>
-                        <th><span class="bezeichnung">Einheit</span></th>
-                        <th><span class="bezeichnung">Von</span></th>
-                        <th><span class="bezeichnung">Bis</span></th>
+        <table>
+            <thead>
+                <tr class="headRow">
+                    <th><span class="bezeichnung">Bezeichnung</span></th>
+                    <th><span class="bezeichnung">Menge</span></th>
+                    <th><span class="bezeichnung">Einheit</span></th>
+                    <th><span class="bezeichnung">Monat</span></th>
+                    <th><span class="bezeichnung">Jahr</span></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
+                    <tr>
+                        <td class="ressource"><?php echo htmlspecialchars($row['Bezeichnung']); ?></td>
+                        <td class="amount"><?php echo htmlspecialchars($row['Menge']); ?></td>
+                        <td class="unit"><?php echo htmlspecialchars($row['Einheit']); ?></td>
+                        <td class="month"><?php echo htmlspecialchars($row['Monat']); ?></td>
+                        <td class="year"><?php echo htmlspecialchars($row['Jahr']); ?></td>
+                        <td><img class="trash" src="lib/pictures/Trash_Icon.png" alt=""></td>
                     </tr>
-                </thead>
-                <tbody>
-
-                    <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
-                        <tr>
-                            <td class="ressource"><?php echo htmlspecialchars($row['Bezeichnung']); ?></td>
-                            <td class="amount"><?php echo htmlspecialchars($row['Menge']); ?></td>
-                            <td class="unit"><?php echo htmlspecialchars($row['Einheit']); ?></td>
-                            <td class="from"><?php echo htmlspecialchars($row['von']); ?></td>
-                            <td class="to"><?php echo htmlspecialchars($row['bis']); ?></td>
-                            <td><img class="trash" src="lib/pictures/Trash_Icon.png" alt=""></td>
-                        </tr>
-                    <?php endwhile; ?>
-
-                </tbody>
-            </table>
-        </div>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
     </div>
 </body>
 
