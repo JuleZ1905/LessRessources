@@ -179,14 +179,15 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 
     <div class="dataTable">
         <h1 id="data_input">Datenbank</h1>
-        <table>
+        <table class="fixed_header">
             <thead>
-                <tr class="headRow">
-                    <th><span class="bezeichnung">Bezeichnung</span></th>
-                    <th><span class="bezeichnung">Menge</span></th>
-                    <th><span class="bezeichnung">Einheit</span></th>
-                    <th><span class="bezeichnung">Monat</span></th>
-                    <th><span class="bezeichnung">Jahr</span></th>
+                <tr>
+                    <th>Bezeichnung</th>
+                    <th>Menge</th>
+                    <th>Einheit</th>
+                    <th>Monat</th>
+                    <th>Jahr</th>
+                    <th>löschen</th>
                 </tr>
             </thead>
             <tbody>

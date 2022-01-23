@@ -7,26 +7,6 @@ body {
     background-color: #d2f0ca;
 }
 
-table {
-    border-spacing: 0;
-}
-
-th,
-td {
-    border-bottom: 0.5px solid black;
-    padding: 15px;
-}
-
-.forms {
-    background-color: white;
-    margin-right: 10%;
-    margin-left: 5%;
-    border-radius: 4%;
-    box-shadow: grey 20px;
-    padding: 15px 30px 15px 15px;
-    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
-    float: left;
-}
 
 .text_position:not(label) {
     float: left;
@@ -84,23 +64,6 @@ label {
     margin-left: 8px;
 }
 
-.dataTable {
-    background-color: white;
-    float: left;
-    padding: 15px 20px 30px;
-    text-align: center;
-    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
-    border-radius: 4%;
-}
-
-.Uebeerschrift {
-    margin-top: 140px;
-    margin-right: auto;
-    margin-left: auto;
-    width: fit-content;
-    font-size: 80px;
-    color: #3aaa35;
-}
 
 .navbar {
     background-color: rgba(157, 182, 183, 0.51);
@@ -165,3 +128,67 @@ nav a:hover {
 nav a:active {
     font-weight: bold;
 }
+
+.Uebeerschrift {
+    margin-top: 140px;
+    margin-right: auto;
+    margin-left: auto;
+    width: fit-content;
+    font-size: 80px;
+    color: #3aaa35;
+}
+
+
+.forms {
+    background-color: white;
+    margin-right: 10%;
+    margin-left: 5%;
+    border-radius: 4%;
+    box-shadow: grey 20px;
+    padding: 15px 30px 15px 15px;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    float: left;
+}
+
+.dataTable {
+
+    overflow: auto;
+
+    height: 300px;
+
+    background-color: white;
+    float: left;
+    table-layout: fixed;
+
+    text-align: center;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    border-radius: 4%;
+    padding: 20px;
+
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    padding: 10px;
+}
+
+
+th, td {
+    padding: 8px 16px;
+}
+
+th {
+    background: rgba(200, 208, 202, 0.46);
+}
+
+.fixed_header,
+.fixed_header td {
+    border-bottom: 1px solid rgb(190, 190, 190);
+}
+
+.fixed_header th {
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
