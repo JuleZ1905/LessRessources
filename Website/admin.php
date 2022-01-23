@@ -169,36 +169,32 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
     $stmt = $db->query($sql1);
     ?>
 
+
     <div class="dataTable">
-
         <h1 id="data_input">Datenbank</h1>
-        <div class="scroll">
-            <table>
-                <thead>
-                    <tr class="headRow">
-                        <th><span class="bezeichnung">Bezeichnung</span></th>
-                        <th><span class="bezeichnung">Menge</span></th>
-                        <th><span class="bezeichnung">Einheit</span></th>
-                        <th><span class="bezeichnung">Von</span></th>
-                        <th><span class="bezeichnung">Bis</span></th>
-                    </tr>
-                </thead>
-                <tbody>
+        <table>
+            <tr>    <th><div>Bezeichnung</div>
+                    <th><div>Menge</div>
+                    <th><div>Einheit</div>
+                    <th><div>Von</div>
+                    <th><div>Bis</div>
 
-                    <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
-                        <tr>
-                            <td class="ressource"><?php echo htmlspecialchars($row['Bezeichnung']); ?></td>
-                            <td class="amount"><?php echo htmlspecialchars($row['Menge']); ?></td>
-                            <td class="unit"><?php echo htmlspecialchars($row['Einheit']); ?></td>
-                            <td class="from"><?php echo htmlspecialchars($row['von']); ?></td>
-                            <td class="to"><?php echo htmlspecialchars($row['bis']); ?></td>
-                            <td><img class="trash" src="lib/pictures/Trash_Icon.png" alt=""></td>
-                        </tr>
-                    <?php endwhile; ?>
 
-                </tbody>
-            </table>
-        </div>
+
+
+                            <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
+                                <tr>
+                                    <td class="ressource"><?php echo htmlspecialchars($row['Bezeichnung']); ?></td>
+                                    <td class="amount"><?php echo htmlspecialchars($row['Menge']); ?></td>
+                                    <td class="unit"><?php echo htmlspecialchars($row['Einheit']); ?></td>
+                                    <td class="from"><?php echo htmlspecialchars($row['von']); ?></td>
+                                    <td class="to"><?php echo htmlspecialchars($row['bis']); ?></td>
+                                    <td><img class="trash" src="lib/pictures/Trash_Icon.png" alt=""></td>
+                                </tr>
+                            <?php endwhile; ?>
+
+
+    </table>
     </div>
 </body>
 
