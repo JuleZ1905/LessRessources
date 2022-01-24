@@ -1,6 +1,6 @@
 Der korrekte Name für den hier bezeichneten „Strom“ wäre die elektrische Energie (oder auch Strommenge sowie Elektrizitätsmenge, wenn es um die Übertragung ebenjener Energie geht), denn unter elektrischem Strom, kurz Strom genannt, versteht man eigentlich eine physikalische Erscheinung aus der Elektrizitätslehre. Ihre physikalische Größe zur Messung ebenjener ist die Stromstärke und ihre Einheit Ampere (kurz: A). Die zumeist verwendete Maßeinheit für die elektrische Energie hingegen, die wir auf unserer Webseite jedoch (inkorrekter Weise) der Verständlichkeit halber als „Strom“ bezeichnen, ist die Kilowattstunde (kurz: kWh). Dies ist lediglich eine größere Maßeinheit für Joule (kurz: J), wobei eine Kilowattstunde ganze 3.600.000 Joule sind! Das Äquivalenz zu Joule wären die Wattsekunden (kurz: Ws). Zu erwähnen, weswegen wir auf unserer Webseite die Werte lediglich in Kilowattstunden – oder gar größeren Einheiten – angeben, sollte an dieser Stelle selbsterklärend sein.
 
-**Wo brauchen wir jetzt denn aber Strom?**  
+**Wo brauchen wir jetzt denn aber Strom?**
 Strom benötigen wir für einige, technische Geräte im Haushalt wie Elektroheizungen, Elektroherde, Fernseher, Geschirrspüler, Waschmaschinen und Vieles mehr. Von Jahr zu Jahr erhöht sich die Anzahl der energiefressenden Geräte und der Stromverbrauch steigt somit immens. Zwar gibt es seit ein paar Jahren diverse Initiativen, die dagegen vorgehen, dennoch gibt es noch viel zu tun!
 
 **Aber was kann ich denn jetzt dagegen tun?**  
