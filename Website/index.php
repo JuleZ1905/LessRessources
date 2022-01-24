@@ -21,7 +21,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 
 <body>
     <nav class="navbar">
-        <div class="logo"><img class="logo" src="lib/pictures/Logo.png" alt="LOGO"></div>
+        <div class="logo"><img onclick="window.open('index.php','_self')" class="logo" src="lib/pictures/Logo.png" alt="LOGO"></div>
         <div class="push-left">
             <button id="menu-toggler" data-class="menu-active" class="hamburger">
                 <span class="hamburger-line hamburger-line-top"></span>
@@ -44,19 +44,19 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
     </nav>
 
     <h1 class="überschrift">LessRessources</h1>
-
-
-    <div class="textboxWho">
-        <h3>Wer sind wir?</h3>
-        <br>
-        <p class="text1">
-            Das vierköpfige Team von „LessRessources“ aus der 4AX hat sich im Rahmen eines ITP-Projektes zusammengefunden,
-            um den Ressourcenverbrauch an der Schule zu erheben <br>und gegebenenfalls auch zu reduzieren. Aufgrund von Zeitmangel für das erste, größere ITP-Projekt,
-            befassen sie sich vorerst lediglich mit der Erfassung und Darstellung des Stromverbrauches auf ihrer eigens für das Projekt angelegten Website (lessressources.com).
-            Somit soll für die Zukunft bewerkstelligt werden, inwieweit sich der Ressourcenverbrauch in den vergangenen Monaten verbessert oder auch verschlechtert hat.
-            Das vierköpfige Team von „LessRessources“ aus der 4AX hat sich im Rahmen eines ITP-Projektes zusammengefunden,<br>
-        </p>
+    <div class="firstDiv">
+        <div class="textboxWho">
+            <h1>Wer sind wir?</h1>
+            <br>
+            <p class="text1">
+                Das vierköpfige Team von „LessRessources“ aus der 4AX hat sich im Rahmen eines ITP-Projektes zusammengefunden,
+                um den Ressourcenverbrauch an der Schule zu erheben <br>und gegebenenfalls auch zu reduzieren. Aufgrund von Zeitmangel für das erste, größere ITP-Projekt,
+                befassen sie sich vorerst lediglich mit der Erfassung und Darstellung des Stromverbrauches auf ihrer eigens für das Projekt angelegten Website (lessressources.com).
+                Somit soll für die Zukunft bewerkstelligt werden, inwieweit sich der Ressourcenverbrauch in den vergangenen Monaten verbessert oder auch verschlechtert hat.<br>
+            </p>
+        </div>
     </div>
+
 
     <!--
 <figure class="snip1477">
@@ -75,4 +75,5 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 -->
 
 </body>
+
 </html>
