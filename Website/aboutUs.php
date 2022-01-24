@@ -18,21 +18,28 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 </head>
 
 <body>
-    <div class="navbar">
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="aboutUs.php">Über uns</a></li>
-                <li><a href="strom.php">Strom</a></li>
+    <nav class="navbar">
+        <div class="logo"><img onclick="window.open('index.php','_self')" class="logo" src="lib/pictures/Logo.png" alt="LOGO"></div>
+        <div class="push-left">
+            <button id="menu-toggler" data-class="menu-active" class="hamburger">
+                <span class="hamburger-line hamburger-line-top"></span>
+                <span class="hamburger-line hamburger-line-middle"></span>
+                <span class="hamburger-line hamburger-line-bottom"></span>
+            </button>
+            <ul id="primary-menu" class="menu nav-menu">
+                <li class="menu-item current-menu-item"><a class="nav__link" href="index.php">Home</a></li>
+                <li class="menu-item dropdown"><a class="nav__link" href="aboutUs.php">Über uns</a></li>
+                <li class="menu-item dropdown"><a class="nav__link" href="strom.php">Strom</a></li>
                 <?php
                 if ($isLoggedIn) {
-                    echo '<li><a href="admin.php">Admin</a></li>';
+                    echo '<li class="menu-item dropdown"><a class="nav__link" href="admin.php">Admin</a></li>';
                 } else {
-                    echo '<li><a href="login.php">Login</a></li>';
+                    echo '<li class="menu-item dropdown"><a class="nav__link" href="login.php">Login</a></li>';
                 }
                 ?>
             </ul>
-        </nav>
+        </div>
+    </nav>
 
 <div class = "Uebeerschrift">
         <p> Über uns </p>
