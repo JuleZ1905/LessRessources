@@ -81,6 +81,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
                 Somit soll für die Zukunft bewerkstelligt werden, inwieweit sich der Ressourcenverbrauch in den vergangenen Monaten verbessert oder auch verschlechtert hat.<br>
             </p>
         </div>
+        <img src="lib/pictures/Green_House-removebg-preview.png" alt="">
     </div>
 
 
