@@ -98,9 +98,9 @@ label {
 
 .dataTable {
     overflow: auto;
-    height: 300px;
+    height: 387px;
     background-color: white;
-    float: left;
+    margin-right: 10%;
     table-layout: fixed;
     text-align: center;
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
@@ -132,25 +132,7 @@ th {
     border-bottom: 1px solid rgb(0, 0, 0);
 }
 
-@media only screen and (max-width: 1350px) {
-    body {}
-    .firstdiv {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .forms {
-        position: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .all {
-        display: flex;
-        flex-direction: column;
-    }
-    .dataTable {
-        margin: 50px;
-    }
-}
+
 
 .logo {
     max-width: 200px;
@@ -189,11 +171,7 @@ th {
     z-index: 1000;
 }
 
-@media screen and (max-width: 768px) {
-    .hamburger {
-        display: inline-block;
-    }
-}
+
 
 .hamburger-line {
     background: #272727;
@@ -263,6 +241,53 @@ th {
         transform: translatey(0%);
         opacity: 1;
     }
+
+    .nav-menu .menu-item a {
+        font-size: 20px;
+        margin: 8px;
+    }
+
+    .sub-nav {
+        position: relative;
+        width: 100%;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+    }
+
+    .hamburger {
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    body {}
+    .firstdiv {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .forms {
+        position: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .all {
+        display: flex;
+        flex-direction: column;
+    }
+    .dataTable {
+        margin: 50px;
+    }
+}
+
+.sub-nav {
+    border: 1px solid #ccc;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    padding: 5px 5px;
+    list-style: none;
+    width: 230px;
 }
 
 .nav-menu .menu-item a {
@@ -279,32 +304,6 @@ th {
     text-decoration: underline;
 }
 
-@media screen and (max-width: 768px) {
-    .nav-menu .menu-item a {
-        font-size: 20px;
-        margin: 8px;
-    }
-}
-
-.sub-nav {
-    border: 1px solid #ccc;
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    padding: 5px 5px;
-    list-style: none;
-    width: 230px;
-}
-
-@media screen and (max-width: 768px) {
-    .sub-nav {
-        position: relative;
-        width: 100%;
-        display: none;
-        background-color: rgba(0, 0, 0, 0.2);
-        box-sizing: border-box;
-    }
-}
 
 .nav__link {
     font-size: 20px;
@@ -316,4 +315,26 @@ th {
 
 .sub-nav:hover {
     display: block;
+}
+
+
+
+
+html .content, body .content {
+    margin-top: 100px;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+
+}
+html .content span, body .content span {
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    margin-top: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    width: fit-content;
+    font-size: 80px;
+    color: #3aaa35;
 }
