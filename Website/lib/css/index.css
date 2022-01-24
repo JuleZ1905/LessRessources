@@ -3,43 +3,45 @@
 }
 
 body {
-    background-color: #d2f0ca;
     margin: 0;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    flex-wrap: nowrap;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #d2f0ca;
 }
 
-.chart {
-    position: relative;
-    width: 50vw;
-    height: 50vh;
+.textboxWho {
+    max-width: 40%;
+    background-color: white;
+    margin: 5%;
+    border-radius: 20px;
+    box-shadow: grey 20px;
+    padding: 15px 30px 15px 15px;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    float: left;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
-}
-
-.Uebeerschrift {
-    grid-column: 2;
-    grid-row: 1;
+.überschrift {
+    margin-top: 80px;
     margin-right: auto;
     margin-left: auto;
     width: fit-content;
     font-size: 80px;
+    color: #3aaa35;
 }
 
-.chart {
-    grid-column: 2;
-    grid-row: 2;
+.text1 {
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 0;
 }
 
-.fakten {
-    border: #353535 solid;
+.firstDiv {
+    display: flex;
+    justify-content: left;
+}
+
+h1 {
+    color: #3aaa35;
 }
 
 .logo {

@@ -24,91 +24,97 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 </head>
 
 <body>
-    <div class="navbar">
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="aboutUs.php">Über uns</a></li>
-                <li><a href="strom.php">Strom</a></li>
+    <nav class="navbar">
+        <div class="logo"><img onclick="window.open('index.php','_self')" class="logo" src="lib/pictures/Logo.png" alt="LOGO"></div>
+        <div class="push-left">
+            <button id="menu-toggler" data-class="menu-active" class="hamburger">
+                <span class="hamburger-line hamburger-line-top"></span>
+                <span class="hamburger-line hamburger-line-middle"></span>
+                <span class="hamburger-line hamburger-line-bottom"></span>
+            </button>
+            <ul id="primary-menu" class="menu nav-menu">
+                <li class="menu-item current-menu-item"><a class="nav__link" href="index.php">Home</a></li>
+                <li class="menu-item dropdown"><a class="nav__link" href="aboutUs.php">Über uns</a></li>
+                <li class="menu-item dropdown"><a class="nav__link" href="strom.php">Strom</a></li>
                 <?php
                 if ($isLoggedIn) {
-                    echo '<li><a href="admin.php">Admin</a></li>';
+                    echo '<li class="menu-item dropdown"><a class="nav__link" href="admin.php">Admin</a></li>';
                 } else {
-                    echo '<li><a href="login.php">Login</a></li>';
+                    echo '<li class="menu-item dropdown"><a class="nav__link" href="login.php">Login</a></li>';
                 }
                 ?>
             </ul>
-        </nav>
-    </div>
+        </div>
+    </nav>
 
     <div class="Uebeerschrift">
         <p>Admin-Panel</p>
     </div>
-<div class="all">
-    <div class = "firstdiv">
-        <form class="forms" action="" method="POST">
-            <div class="forms_body">
-                <div class="input_line centerDivContent">
-                    <h1 id="data_input">Dateninput</h1>
-                </div>
-                <div class="input_line">
-                    <p class="text_position">Ressource:</p>
-                    <input type="radio" name="ress" value="Strom" id="ress" checked>
-                    <label for="ress">Strom</label>
-                </div>
+    <div class="all">
+        <div class="firstdiv">
+            <form class="forms" action="" method="POST">
+                <div class="forms_body">
+                    <div class="input_line centerDivContent">
+                        <h1 id="data_input">Dateninput</h1>
+                    </div>
+                    <div class="input_line">
+                        <p class="text_position">Ressource:</p>
+                        <input type="radio" name="ress" value="Strom" id="ress" checked>
+                        <label for="ress">Strom</label>
+                    </div>
 
-                <div class="input_line">
-                    <p class="text_position" for="menge">Menge:</p>
-                    <input type="number" id="menge" name="menge" required min=1>
-                </div>
+                    <div class="input_line">
+                        <p class="text_position" for="menge">Menge:</p>
+                        <input type="number" id="menge" name="menge" required min=1>
+                    </div>
 
-                <div class="input_line">
-                    <p class="text_position">Einheit:</p>
-                    <input type="radio" name="einheit" value="kWh" id="einheit" checked>
-                    <label for="einheit">kWh</label>
-                </div>
+                    <div class="input_line">
+                        <p class="text_position">Einheit:</p>
+                        <input type="radio" name="einheit" value="kWh" id="einheit" checked>
+                        <label for="einheit">kWh</label>
+                    </div>
 
-                <div class="input_line">
-                    <p class="text_position">Monat:</p>
-                    <select name="month" id="months" required>
-                        <option value="" selected disabled>-- select --</option>
-                        <option value="1">Januar</option>
-                        <option value="2">Februar</option>
-                        <option value="3">März</option>
-                        <option value="4">April</option>
-                        <option value="5">Mai</option>
-                        <option value="6">Juni</option>
-                        <option value="7">Juli</option>
-                        <option value="8">August</option>
-                        <option value="9">September</option>
-                        <option value="10">Oktober</option>
-                        <option value="11">November</option>
-                        <option value="12">Dezember</option>
-                    </select>
-                </div>
+                    <div class="input_line">
+                        <p class="text_position">Monat:</p>
+                        <select name="month" id="months" required>
+                            <option value="" selected disabled>-- select --</option>
+                            <option value="1">Januar</option>
+                            <option value="2">Februar</option>
+                            <option value="3">März</option>
+                            <option value="4">April</option>
+                            <option value="5">Mai</option>
+                            <option value="6">Juni</option>
+                            <option value="7">Juli</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">Oktober</option>
+                            <option value="11">November</option>
+                            <option value="12">Dezember</option>
+                        </select>
+                    </div>
 
-                <div class="input_line">
-                    <p class="text_position">Jahr: </p>
-                    <select name="year" id="year" required>
-                        <option value="" selected disabled>-- select --</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                    </select>
-                </div>
+                    <div class="input_line">
+                        <p class="text_position">Jahr: </p>
+                        <select name="year" id="year" required>
+                            <option value="" selected disabled>-- select --</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                        </select>
+                    </div>
 
-                <div class="error centerDivContent">
-                    <p class="inputError">Ungültiger Dateninput, bitte probiere es nochmal!</p>
-                </div>
+                    <div class="error centerDivContent">
+                        <p class="inputError">Ungültiger Dateninput, bitte probiere es nochmal!</p>
+                    </div>
 
-                <div class="input_line centerDivContent">
-                    <button class="btn_submit" name="submitBtn" type="submit">Submit</button>
+                    <div class="input_line centerDivContent">
+                        <button class="btn_submit" name="submitBtn" type="submit">Submit</button>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
 
         </div>
 
@@ -182,7 +188,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
         <div class="dataTable">
             <h1 id="data_input">Datenbank</h1>
             <table class="fixed_header">
-                <thead>
+                <tbody>
                     <tr>
                         <th>Bezeichnung</th>
                         <th>Menge</th>
@@ -191,7 +197,6 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
                         <th>Jahr</th>
                         <th>löschen</th>
                     </tr>
-                </thead>
                 <tbody>
                     <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
                         <tr>
@@ -249,5 +254,4 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
         </div>
     </div>
 </body>
-
 </html>
