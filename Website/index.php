@@ -14,6 +14,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
     <meta charset="UTF-8">
     <title>LessRessources</title>
     <link href="lib/css/index.css" rel="stylesheet">
+    <link href="lib/css/general.css" rel="stylesheet">
     <link rel="shortcut icon" href="lib/pictures/Logo_Icon.png" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="lib/js/index.js"></script>
@@ -30,7 +31,6 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
             </button>
             <ul id="primary-menu" class="menu nav-menu">
                 <li class="menu-item current-menu-item"><a class="nav__link" href="index.php">Home</a></li>
-                <li class="menu-item dropdown"><a class="nav__link" href="aboutUs.php">Über uns</a></li>
                 <li class="menu-item dropdown"><a class="nav__link" href="strom.php">Strom</a></li>
                 <?php
                 if ($isLoggedIn) {

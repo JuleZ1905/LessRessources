@@ -15,6 +15,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
     <title>Strom</title>
     <link rel="shortcut icon" href="lib/pictures/Logo_Icon.png" type="image/x-icon">
     <link href="lib/css/strom.css" rel="stylesheet">
+    <link href="lib/css/general.css" rel="stylesheet">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="lib/js/strom.js"></script>
@@ -31,7 +32,6 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
             </button>
             <ul id="primary-menu" class="menu nav-menu">
                 <li class="menu-item current-menu-item"><a class="nav__link" href="index.php">Home</a></li>
-                <li class="menu-item dropdown"><a class="nav__link" href="aboutUs.php">Über uns</a></li>
                 <li class="menu-item dropdown"><a class="nav__link" href="strom.php">Strom</a></li>
                 <?php
                 if ($isLoggedIn) {
