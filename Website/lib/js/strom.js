@@ -1,3 +1,12 @@
+// Toggle menu on click
+$("#menu-toggler").click(function() {
+    toggleBodyClass("menu-active");
+});
+
+function toggleBodyClass(className) {
+    document.body.classList.toggle(className);
+}
+
 const ctx = document.getElementById("myChart").getContext("2d");
 
 let delayed;
@@ -11,33 +20,33 @@ gradient2.addColorStop(0, "rgb(58,213,97)");
 gradient2.addColorStop(1, "rgba(56,213,105,0.3)");
 
 const labels = [
-  "Jänner",
-  "Februar",
-  "März",
-  "April",
-  "Mai",
-  "Juni",
-  "Juli",
-  "August",
-  "September",
-  "Oktober",
-  "November",
-  "Dezember",
+    "Jänner",
+    "Februar",
+    "März",
+    "April",
+    "Mai",
+    "Juni",
+    "Juli",
+    "August",
+    "September",
+    "Oktober",
+    "November",
+    "Dezember",
 ];
 
 $.post(
-  "lib/DB_dataCollection/dbRequest.php",
-  function (data) {
-    createGraph(data);
-  },
-  "json"
+    "lib/DB_dataCollection/dbRequest.php",
+    function(data) {
+        createGraph(data);
+    },
+    "json"
 );
 
 
-function createDataArray(data, year){
+function createDataArray(data, year) {
     let result = new Array();
     for (let index = 0; index < Object.keys(data[year]).length; index++) {
-        result[index] = data[year][index+1];
+        result[index] = data[year][index + 1];
     }
     return result;
 }
@@ -53,63 +62,63 @@ function getGradient() {
 
 
 function createGraph(dbData) {
-  let years = Object.keys(dbData);
-  let datasetEntries = new Array();
+    let years = Object.keys(dbData);
+    let datasetEntries = new Array();
 
-  for (let index = 0; index < years.length; index++) {
-    datasetEntries[index] = {
-      label: years[index],
-      data: createDataArray(dbData, years[index]),
-      fill: true,
-      backgroundColor: getGradient(),
-      borderColor: "#fff",
-      pointBackgroundColor: "rgb(66,118,159)",
-      tension: 0.4,
+    for (let index = 0; index < years.length; index++) {
+        datasetEntries[index] = {
+            label: years[index],
+            data: createDataArray(dbData, years[index]),
+            fill: true,
+            backgroundColor: getGradient(),
+            borderColor: "#fff",
+            pointBackgroundColor: "rgb(66,118,159)",
+            tension: 0.4,
+        };
+    }
+
+    console.log(datasetEntries);
+
+    const data = {
+        labels,
+        datasets: datasetEntries,
     };
-  }
 
-  console.log(datasetEntries);
-
-  const data = {
-    labels,
-    datasets: datasetEntries,
-  };
-
-  const config = {
-    type: "line",
-    data: data,
-    options: {
-      radius: 5,
-      hitRadius: 30,
-      hoverRadius: 12,
-      responsive: true,
-      animation: {
-        onComplete: () => {
-          delayed = true;
-        },
-        delay: (context) => {
-          let delay = 0;
-          if (
-            context.type === "data" &&
-            context.mode === "default" &&
-            !delayed
-          ) {
-            delay = context.dataIndex * 300 + context.datasetIndex * 100;
-          }
-          return delay;
-        },
-      },
-      scales: {
-        y: {
-          ticks: {
-            callback: function (value) {
-              return value + " kWh";
+    const config = {
+        type: "line",
+        data: data,
+        options: {
+            radius: 5,
+            hitRadius: 30,
+            hoverRadius: 12,
+            responsive: true,
+            animation: {
+                onComplete: () => {
+                    delayed = true;
+                },
+                delay: (context) => {
+                    let delay = 0;
+                    if (
+                        context.type === "data" &&
+                        context.mode === "default" &&
+                        !delayed
+                    ) {
+                        delay = context.dataIndex * 300 + context.datasetIndex * 100;
+                    }
+                    return delay;
+                },
             },
-          },
+            scales: {
+                y: {
+                    ticks: {
+                        callback: function(value) {
+                            return value + " kWh";
+                        },
+                    },
+                },
+            },
         },
-      },
-    },
-  };
+    };
 
-  const myChart = new Chart(ctx, config);
+    const myChart = new Chart(ctx, config);
 }
