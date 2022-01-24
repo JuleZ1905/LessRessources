@@ -37,7 +37,7 @@ Navbar
     border-bottom-right-radius: 20px;
 }
 
-img {
+.logo img {
     max-height: 408px;
     margin: 5%;
 }

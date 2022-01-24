@@ -68,8 +68,6 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 
 
 
-
-
     <div class="firstDiv">
         <div class="textboxWho">
             <h1>Wer sind wir?</h1>
@@ -85,21 +83,21 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
     </div>
 
 
-    <!--
-<figure class="snip1477">
-    <img src="../../lib/strom.jpg" />
-    <div class="title">
-        <div>
-            <h2>verbrauchter</h2>
-            <h4>Strom</h4>
-        </div>
+    <div class = "bilder">
+        <figure class="snip1566">
+          <img src="lib/pictures/Julian.jpg" alt="Zangl" />
+          <figcaption><p>Zangl</p></figcaption>
+        </figure>
+        <figure class="snip1566"><img src="lib/pictures/Kiki.jpg" alt="Jaros" />
+          <figcaption><p>Jaros</p></figcaption>
+        </figure>
+        <figure class="snip1566"><img src="lib/pictures/hannah.jpg" alt="Brunner" />
+          <figcaption><p>Brunner</p></figcaption>
+        </figure>
+        <figure class="snip1566"><img src="lib/pictures/Katharina.jpg" alt="Klenner" />
+          <figcaption><p>Klenner</p></figcaption>
+        </figure>
     </div>
-    <figcaption>
-        <p>Which is worse, that everyone has his price, or that the price is always so low.</p>
-    </figcaption>
-    <a href="#"></a>
-</figure>
--->
 
 </body>
 
