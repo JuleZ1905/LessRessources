@@ -47,9 +47,27 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
         </div>
     </nav>
 
-    <div class="Uebeerschrift">
-        <p>Admin-Panel</p>
-    </div>
+
+
+        <div class="content">
+            <div class="random">
+              <span class="nbr ltr">0</span>
+              <span class="nbr ltr">0</span>
+              <span class="nbr ltr">0</span>
+              <span class="nbr ltr">0</span>
+              <span class="nbr ltr">0</span>
+              <span class="nbr ltr">0</span>
+              <span class="nbr ltr">0</span>
+              <span class="nbr ltr">0</span>
+              <span class="nbr ltr">0</span>
+              <span class="nbr ltr">0</span>
+              <span class="nbr ltr">0</span>
+
+            </div>
+          </div>
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
     <div class="all">
         <div class="firstdiv">
             <form class="forms" action="" method="POST">
