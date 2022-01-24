@@ -1,14 +1,51 @@
-.chart {
 
-    width: 50vw;
-    height: 50vh;
+body {
+    background-color: #d2f0ca;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+h1 {
+    color: #3aaa35;
+}
+
+.top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .chart {
+    min-width: 50%;
+    display: flex;
+    margin: 5%;
+    justify-content: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px 30px 15px 30px;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.centerContent {
     display: flex;
     justify-content: center;
 }
 
+.infotext {
+    max-width: 50vw;
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px 30px 15px 30px;
+    margin: 5%;
+    border-radius: 20px;
+    padding: 4%;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
 .fakten {
     border: #353535 solid;
+
 }
+
