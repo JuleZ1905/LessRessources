@@ -87,7 +87,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
         <p>Zangl</p>
       </figcaption>
     </figure>
-    <figure class="snip1566"><img src="lib/pictures/Kiki.jpg" alt="Jaros" />
+    <figure class="snip1566"><img src="lib/pictures/Kiki1.jpg" alt="Jaros" />
       <figcaption>
         <p>Jaros</p>
       </figcaption>
