@@ -1,6 +1,6 @@
 <?php
 
-
+//fills an associative array as json data from database
 class Seeder
 {
     public static function seed()

@@ -1,15 +1,17 @@
 // Toggle menu on click
-$("#menu-toggler").click(function () {
-  toggleBodyClass("menu-active");
+$("#menu-toggler").click(function() {
+    toggleBodyClass("menu-active");
 });
 
 function toggleBodyClass(className) {
-  document.body.classList.toggle(className);
+    document.body.classList.toggle(className);
 }
 
 const ctx = document.getElementById("myChart").getContext("2d");
 
 let delayed;
+
+//gradients for a cool look of the graph
 
 let gradient = ctx.createLinearGradient(0, 0, 0, 400);
 gradient.addColorStop(0, "rgba(58,123,213,1)");
@@ -31,43 +33,47 @@ result.push(gradient3);
 
 
 const labels = [
-  "Jänner",
-  "Februar",
-  "März",
-  "April",
-  "Mai",
-  "Juni",
-  "Juli",
-  "August",
-  "September",
-  "Oktober",
-  "November",
-  "Dezember",
+    "Jänner",
+    "Februar",
+    "März",
+    "April",
+    "Mai",
+    "Juni",
+    "Juli",
+    "August",
+    "September",
+    "Oktober",
+    "November",
+    "Dezember",
 ];
 
+//get data from database over post request
 $.post(
-  "lib/DB_dataCollection/dbRequest.php",
-  function (data) {
-    createGraph(data);
-  },
-  "json"
+    "lib/DB_dataCollection/dbRequest.php",
+    function(data) {
+        createGraph(data);
+    },
+    "json"
 );
 
-function arrayRemove(arr, value) { 
-    
-    return arr.filter(function(ele){ 
-        return ele != value; 
+//removes a specific arrays
+function arrayRemove(arr, value) {
+
+    return arr.filter(function(ele) {
+        return ele != value;
     });
 }
 
+//creates array of data for a specific year
 function createDataArray(data, year) {
-  let result = new Array();
-  for (let index = 0; index < Object.keys(data[year]).length; index++) {
-    result[index] = data[year][index + 1];
-  }
-  return result;
+    let result = new Array();
+    for (let index = 0; index < Object.keys(data[year]).length; index++) {
+        result[index] = data[year][index + 1];
+    }
+    return result;
 }
 
+//returns a random gradient
 function getGradient() {
     let rand = Math.floor(Math.random() * result.length);
     let res = result[rand];
@@ -75,106 +81,108 @@ function getGradient() {
     return res;
 }
 
+//creates the graph
 function createGraph(dbData) {
-  let years = Object.keys(dbData);
-  let datasetEntries = new Array();
+    let years = Object.keys(dbData);
+    let datasetEntries = new Array();
 
-  for (let index = 0; index < years.length; index++) {
-    datasetEntries[index] = {
-      label: years[index],
-      data: createDataArray(dbData, years[index]),
-      fill: true,
-      backgroundColor: getGradient(),
-      borderColor: "#fff",
-      pointBackgroundColor: "rgb(128,128,128)",
-      tension: 0.4,
+    for (let index = 0; index < years.length; index++) {
+        datasetEntries[index] = {
+            label: years[index],
+            data: createDataArray(dbData, years[index]),
+            fill: true,
+            backgroundColor: getGradient(),
+            borderColor: "#fff",
+            pointBackgroundColor: "rgb(128,128,128)",
+            tension: 0.4,
+        };
+    }
+
+    console.log(datasetEntries);
+
+    const data = {
+        labels,
+        datasets: datasetEntries,
     };
-  }
 
-  console.log(datasetEntries);
-
-  const data = {
-    labels,
-    datasets: datasetEntries,
-  };
-
-  const config = {
-    type: "line",
-    data: data,
-    options: {
-      radius: 5,
-      hitRadius: 30,
-      hoverRadius: 12,
-      responsive: true,
-      animation: {
-        onComplete: () => {
-          delayed = true;
-        },
-        delay: (context) => {
-          let delay = 0;
-          if (
-            context.type === "data" &&
-            context.mode === "default" &&
-            !delayed
-          ) {
-            delay = context.dataIndex * 300 + context.datasetIndex * 100;
-          }
-          return delay;
-        },
-      },
-      scales: {
-        y: {
-          ticks: {
-            callback: function (value) {
-              return value + " kWh";
+    const config = {
+        type: "line",
+        data: data,
+        options: {
+            radius: 5,
+            hitRadius: 30,
+            hoverRadius: 12,
+            responsive: true,
+            animation: {
+                onComplete: () => {
+                    delayed = true;
+                },
+                delay: (context) => {
+                    let delay = 0;
+                    if (
+                        context.type === "data" &&
+                        context.mode === "default" &&
+                        !delayed
+                    ) {
+                        delay = context.dataIndex * 300 + context.datasetIndex * 100;
+                    }
+                    return delay;
+                },
             },
-          },
+            scales: {
+                y: {
+                    ticks: {
+                        callback: function(value) {
+                            return value + " kWh";
+                        },
+                    },
+                },
+            },
         },
-      },
-    },
-  };
+    };
 
-  const myChart = new Chart(ctx, config);
+    const myChart = new Chart(ctx, config);
 }
 
-$(document).ready(function () {
-  var $randomnbr = $(".nbr");
-  var $timer = 20;
-  var $it;
-  var $data = 0;
-  var index;
-  var change;
-  var letters = ["S", "t", "r", "o", "m"];
+//For the cool look of the headline
+$(document).ready(function() {
+    var $randomnbr = $(".nbr");
+    var $timer = 20;
+    var $it;
+    var $data = 0;
+    var index;
+    var change;
+    var letters = ["S", "t", "r", "o", "m"];
 
-  $randomnbr.each(function () {
-    change = Math.round(Math.random() * 100);
-    $(this).attr("data-change", change);
-  });
-
-  function random() {
-    return Math.round(Math.random() * 9);
-  }
-
-  function select() {
-    return Math.round(Math.random() * $randomnbr.length + 1);
-  }
-
-  function value() {
-    $(".nbr:nth-child(" + select() + ")").html("" + random() + "");
-    $(".nbr:nth-child(" + select() + ")").attr("data-number", $data);
-    $data++;
-
-    $randomnbr.each(function () {
-      if (
-        parseInt($(this).attr("data-number")) >
-        parseInt($(this).attr("data-change"))
-      ) {
-        index = $(".ltr").index(this);
-        $(this).html(letters[index]);
-        $(this).removeClass("nbr");
-      }
+    $randomnbr.each(function() {
+        change = Math.round(Math.random() * 100);
+        $(this).attr("data-change", change);
     });
-  }
 
-  $it = setInterval(value, $timer);
+    function random() {
+        return Math.round(Math.random() * 9);
+    }
+
+    function select() {
+        return Math.round(Math.random() * $randomnbr.length + 1);
+    }
+
+    function value() {
+        $(".nbr:nth-child(" + select() + ")").html("" + random() + "");
+        $(".nbr:nth-child(" + select() + ")").attr("data-number", $data);
+        $data++;
+
+        $randomnbr.each(function() {
+            if (
+                parseInt($(this).attr("data-number")) >
+                parseInt($(this).attr("data-change"))
+            ) {
+                index = $(".ltr").index(this);
+                $(this).html(letters[index]);
+                $(this).removeClass("nbr");
+            }
+        });
+    }
+
+    $it = setInterval(value, $timer);
 });
