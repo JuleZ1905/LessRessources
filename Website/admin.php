@@ -1,4 +1,5 @@
 <?php
+//looks if the user is logged in
 session_start();
 $isLoggedIn = false;
 if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
@@ -37,6 +38,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
                 <li class="menu-item current-menu-item"><a class="nav__link" href="index.php">Home</a></li>
                 <li class="menu-item dropdown"><a class="nav__link" href="strom.php">Strom</a></li>
                 <?php
+                //chechs if user is logged in
                 if ($isLoggedIn) {
                     echo '<li class="menu-item dropdown"><a class="nav__link" href="admin.php">Admin</a></li>';
                 } else {
@@ -70,6 +72,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 
     <div class="all">
         <div class="firstdiv">
+            <!--- Form for data input --->
             <form class="forms" action="" method="POST">
                 <div class="forms_body">
                     <div class="input_line centerDivContent">
@@ -138,7 +141,8 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
 
         <?php
         require_once 'lib/DB_connection/DB.php';
-
+        
+        //Method for debug purposes
         function console_log($data)
         {
             $output = $data;
@@ -148,7 +152,8 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
             echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
         }
 
-
+        //will be executed if the form submit button is pressed
+        //Purpose: adds the given data to the database
         if (isset($_POST['submitBtn'])) {
             $newResource = $_POST['ress'];
             $menge = $_POST['menge'];
@@ -156,8 +161,10 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
             $month = $_POST['month'];
             $year = $_POST['year'];
 
+            //checks how many rows are returned if a SELECT with the given data is performed
             $nRows = $db->query("SELECT Menge FROM Ressource WHERE Jahr = '$year' AND Monat = '$month';")->fetchColumn();
 
+            //if data already exists, data will be added to existing one. Otherwise new entrie will be created
             if ($nRows > 0) {
                 $sql = "UPDATE Ressource
                 SET Menge = $menge + (SELECT Menge FROM Ressource WHERE Jahr = '$year' AND Monat = '$month')
@@ -180,6 +187,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
             echo "<meta http-equiv='refresh' content='0'>";
         }
 
+        //this section will be executed, if the "trash" button next to the entries was pressed
         if (isset($_POST["ressource"])) {
             $sql = "DELETE
             FROM Ressource
@@ -199,6 +207,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
             ]);
         }
 
+        //From here on, the table with the database entries will be created
         $sql1 = "SELECT Bezeichnung, Menge, Einheit, Monat, Jahr FROM Ressource ORDER BY Jahr, Monat";
         $stmt = $db->query($sql1);
         ?>
@@ -222,6 +231,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
                             <td class="amount"><?php echo htmlspecialchars($row['Menge']); ?></td>
                             <td class="unit"><?php echo htmlspecialchars($row['Einheit']); ?></td>
                             <td class="month"><?php
+                                                //Because the months in the database are in numbers, here it gets imported
                                                 switch ($row['Monat']) {
                                                     case 1:
                                                         echo "Januar";

@@ -1,6 +1,5 @@
 $(document).ready(function() {
-    // Toggle menu on click
-
+    // checks if the trash icon was clicked
     $(".trash").click(function() {
         if (confirm("Sind Sie sich sicher?")) {
             var row = $(this).closest("tr"); // Find the row
@@ -60,12 +59,13 @@ $(document).ready(function() {
                 year: year,
             };
 
+            // post to the admin.php page to further process
             $.post("admin.php", data).done(function() {
                 window.location.reload();
             });
         }
     });
-
+    //if the page is small enough for mobile phones
     $("#menu-toggler").click(function() {
         toggleBodyClass("menu-active");
     });
@@ -76,39 +76,39 @@ $(document).ready(function() {
 
 
 
-
-    $(document).ready(function(){
+    // For the cool effect of the headlines
+    $(document).ready(function() {
 
         var $randomnbr = $('.nbr');
-        var $timer= 20;
+        var $timer = 20;
         var $it;
         var $data = 0;
         var index;
         var change;
         var letters = ["A", "d", "m", "i", "n", "-", "P", "a", "n", "e", "l"];
 
-        $randomnbr.each(function(){
+        $randomnbr.each(function() {
 
-            change = Math.round(Math.random()*100);
+            change = Math.round(Math.random() * 100);
             $(this).attr('data-change', change);
 
         });
 
-        function random(){
-            return Math.round(Math.random()*9);
+        function random() {
+            return Math.round(Math.random() * 9);
         };
 
-        function select(){
-            return Math.round(Math.random()*$randomnbr.length+1);
+        function select() {
+            return Math.round(Math.random() * $randomnbr.length + 1);
         };
 
-        function value(){
-            $('.nbr:nth-child('+select()+')').html(''+random()+'');
-            $('.nbr:nth-child('+select()+')').attr('data-number', $data);
+        function value() {
+            $('.nbr:nth-child(' + select() + ')').html('' + random() + '');
+            $('.nbr:nth-child(' + select() + ')').attr('data-number', $data);
             $data++;
 
-            $randomnbr.each(function(){
-                if(parseInt($(this).attr('data-number')) > parseInt($(this).attr('data-change'))){
+            $randomnbr.each(function() {
+                if (parseInt($(this).attr('data-number')) > parseInt($(this).attr('data-change'))) {
                     index = $('.ltr').index(this);
                     $(this).html(letters[index]);
                     $(this).removeClass('nbr');

@@ -1,4 +1,5 @@
 <?php
+//looks if the user is logged in
 session_start();
 $isLoggedIn = false;
 if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
@@ -33,6 +34,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
         <li class="menu-item current-menu-item"><a class="nav__link" href="index.php">Home</a></li>
         <li class="menu-item dropdown"><a class="nav__link" href="strom.php">Strom</a></li>
         <?php
+        //chechs if user is logged in
         if ($isLoggedIn) {
           echo '<li class="menu-item dropdown"><a class="nav__link" href="admin.php">Admin</a></li>';
         } else {
@@ -87,7 +89,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
         <p>Zangl</p>
       </figcaption>
     </figure>
-    <figure class="snip1566"><img src="lib/pictures/Kiki.jpg" alt="Jaros" />
+    <figure class="snip1566"><img src="lib/pictures/Kiki1.jpg" alt="Jaros" />
       <figcaption>
         <p>Jaros</p>
       </figcaption>

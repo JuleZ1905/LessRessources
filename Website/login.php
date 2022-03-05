@@ -32,6 +32,7 @@
 session_start();
 require_once 'lib/DB_connection/DB.php';
 
+//will be executed if the Login button was clicked
 if (isset($_POST['LOGIN'])) {
     $sql = "SELECT password FROM Admin;";
     $stmt = $db->query($sql);
@@ -46,6 +47,7 @@ if (isset($_POST['LOGIN'])) {
     $password = $_POST['password'];
     $username = $_POST['name'];
 
+    //verifies the password with the one in the database
     if (password_verify($password, $passwd_hash) && $db_username == $username) {
         $_SESSION['isLoggedIn'] = true;
         header('Location: index.php');
